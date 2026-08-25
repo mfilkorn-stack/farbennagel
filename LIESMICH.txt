@@ -1,0 +1,44 @@
+FARBEN NAGEL — Mockup neuer Webauftritt
+
+ORDNERINHALT
+  index.html        die komplette Seite, eine Datei
+  assets/band.jpg   Kopfband, Ladeninnenansicht aus dem alten Auftritt
+  assets/laden.jpg  Ladenfront, aus dem Screenshot der alten Seite freigestellt
+  assets/logo-sand.png / logo.png   Logo, freigestellt
+
+1) LOGO
+   Das Logo ist das Original, freigestellt aus dem Screenshot des alten
+   Webauftritts und dreifach hochskaliert:
+     assets/logo-sand.png  Logo auf dem originalen Sandhintergrund (im Einsatz)
+     assets/logo.png       dasselbe Logo mit transparentem Hintergrund
+   Die Sandflaeche hinter dem Logo (.logopanel) hat exakt denselben Farbwert,
+   die Kante ist deshalb nicht sichtbar.
+   Fuer Print und grosse Formate braucht es trotzdem die Vektordatei
+   (EPS, AI oder SVG) aus dem Bestand. Die freigestellte Fassung reicht fuer
+   Web bis etwa 290 Pixel Breite, darueber wird sie weich.
+
+
+2) FARBEN
+   Ganz oben im CSS im Block "===== MARKE =====" stehen sieben Werte,
+   abgeleitet aus Logo und alter Seite:
+     --rot         #A81E24  Logo- und Schlagzeilenrot
+     --rot-dunkel  #6E1216  dunkle Flaechen, Footer
+     --sand        #E5BB89  Sand des alten Kopfbereichs (gemessen)
+     --sand-text   #8A6A1E  Sand, dunkel genug fuer Text
+     --zart        #EFF0A6  Blassgelb der alten Inhaltsflaechen
+     --grund       #FAF7EC  Seitenhintergrund
+     --tinte       #2A1C14  Textfarbe
+   Nur diese anpassen, alles andere zieht nach.
+
+3) FOTO
+   Das Ladenfoto stammt aus einem Bildschirmfoto, entsprechend begrenzt in
+   der Qualitaet. Fuer den Livegang ein neues Foto der Ladenfront machen:
+   Querformat, moeglichst diffuses Licht, Auslage auf dem Gehweg sichtbar.
+
+4) INHALTE
+   Sortiment der Schubladenwand: Array SORTIMENT unten im <script>.
+   Oeffnungszeiten stehen an drei Stellen: Leiste oben, Footer und die
+   Zeitpruefung im <script> (Minuten ab Mitternacht, 480 = 8:00).
+
+5) HOSTING
+   Reine statische Datei. Kein CMS, keine Datenbank, kein Update-Zwang.

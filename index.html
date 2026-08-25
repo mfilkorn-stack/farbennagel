@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Farben Nagel — Heimwerkermarkt in Stuttgart-West, Gutenbergstr. 65</title>
+<meta name="description" content="Willst Du im Hause etwas machen, Farben Nagel hat die Sachen. Heimwerkermarkt in Stuttgart-West seit 1966: Farben, Eisenwaren, Sanitär, Elektro, Werkzeug — auch einzeln. Foto schicken, wir sagen, ob wir es haben.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Fira+Sans+Condensed:wght@600;700&family=Fira+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== MARKE ===== */
+:root{
+  --rot:#A81E24;
+  --rot-dunkel:#6E1216;
+  --sand:#E5BB89;
+  --sand-text:#6E5210;
+  --zart:#EFF0A6;
+  --grund:#FAF7EC;
+  --tinte:#2A1C14;
+  --gruen:#1F8A3E;      /* WhatsApp-Aktion */
+  --gruen-dunkel:#166B2E;
+}
+/* ================= */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--grund);color:var(--tinte);font-family:"Fira Sans",system-ui,sans-serif;font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1140px;margin:0 auto;padding:0 clamp(18px,5vw,56px)}
+h1,h2,h3{font-family:"Fira Sans Condensed",sans-serif;font-weight:700;line-height:1.05;margin:0}
+h2{font-size:clamp(28px,4.6vw,44px)}
+h3{font-size:20px;font-family:"Fira Sans",sans-serif;font-weight:600;line-height:1.25}
+p{margin:0}
+a{color:inherit}
+
+/* ---- Kopf: Logo und Regalfoto als eine Komposition ---- */
+.masthead{background:var(--sand);border-bottom:3px solid var(--rot);overflow:hidden}
+.masthead-in{max-width:1140px;margin:0 auto;padding-left:clamp(12px,4vw,56px);display:grid;
+  grid-template-columns:minmax(112px,37%) 1fr;align-items:center}
+@media(min-width:800px){.masthead-in{grid-template-columns:clamp(214px,27vw,300px) 1fr}}
+.brand{padding:9px 0;position:relative;z-index:2}
+.brand img{display:block;width:100%;max-width:258px;height:auto}
+.shot{position:relative;overflow:hidden;align-self:stretch;
+  min-height:clamp(76px,19vw,150px);margin-left:-14px;
+  border:2px solid var(--rot);border-right:0;border-radius:14px 0 0 14px;
+  box-shadow:-9px 0 20px -13px rgba(110,18,22,.45)}
+@media(min-width:800px){.shot{margin:12px 0 12px -34px;border-radius:16px 0 0 16px}}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:78% 46%}
+@media(min-width:800px){.shot img{object-position:64% 46%}}
+.shot::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,var(--sand) 0%,rgba(229,187,137,.62) 11%,rgba(229,187,137,.1) 32%,rgba(229,187,137,0) 52%)}
+@media(min-width:800px){.shot::after{background:linear-gradient(90deg,var(--sand) 0%,rgba(229,187,137,.72) 9%,rgba(229,187,137,.12) 26%,rgba(229,187,137,0) 46%)}}
+
+/* ---- Infoleiste ---- */
+.info{background:var(--rot);color:#fff}
+.info .wrap{display:flex;gap:8px 20px;flex-wrap:wrap;align-items:center;padding-top:10px;padding-bottom:10px;font-size:15px}
+.info b{font-weight:600}
+.dot{width:8px;height:8px;border-radius:50%;background:#8CE0A0;display:inline-block;margin-right:7px}
+.dot.zu{background:#F0C0C0}
+.info a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.45)}
+
+/* ---- Hero ---- */
+.hero{padding:clamp(26px,4.5vw,48px) 0 clamp(24px,4vw,40px)}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:clamp(26px,4vw,48px)}
+@media(min-width:960px){.hero-grid{grid-template-columns:1.08fr .92fr;align-items:start}}
+h1{font-size:clamp(29px,5.4vw,50px);color:var(--rot);font-weight:700}
+.lead{font-size:clamp(17px,1.7vw,20px);max-width:33em;margin-top:16px;color:#4A382C}
+
+/* ---- Anfragebox ---- */
+.ask{background:#fff;border:2px solid var(--rot);padding:clamp(18px,2.6vw,26px);margin-top:26px}
+.ask h2{font-size:clamp(22px,2.8vw,28px)}
+.ask p.sub{margin-top:8px;color:#4A382C;font-size:16.5px}
+.ask textarea{width:100%;min-height:104px;font-family:inherit;font-size:17px;padding:13px;margin-top:14px;border:1.5px solid rgba(42,28,20,.32);background:var(--grund);resize:vertical}
+.ask textarea:focus{outline:2px solid var(--rot);outline-offset:1px}
+.routes{display:grid;gap:12px;grid-template-columns:1fr;margin-top:18px}
+@media(min-width:620px){.routes{grid-template-columns:repeat(3,1fr)}}
+.route{background:var(--grund);border:1.5px solid rgba(42,28,20,.18);padding:16px 16px 18px;display:flex;flex-direction:column;gap:8px}
+.route h3{font-size:18px}
+.route p{font-size:15.5px;color:#5C4B3C;flex:1}
+.route .btn{width:100%;margin-top:4px;padding:14px 16px;font-size:16px}
+.mailform{margin-top:16px;padding-top:18px;border-top:1.5px solid rgba(42,28,20,.18)}
+.frow{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:620px){.frow{grid-template-columns:1fr 1fr}}
+.frow label{display:flex;flex-direction:column;gap:5px;font-size:15.5px;font-weight:600;color:#4A382C}
+.frow input{font-family:inherit;font-size:17px;padding:12px;border:1.5px solid rgba(42,28,20,.32);background:var(--grund);font-weight:400}
+.frow input:focus{outline:2px solid var(--rot);outline-offset:1px}
+.btn-mail{background:var(--rot);color:#fff;border-color:var(--rot)}
+.btn-mail:hover{background:var(--rot-dunkel);border-color:var(--rot-dunkel)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:16px 24px;font-size:16.5px;font-weight:600;text-decoration:none;border:2px solid transparent;cursor:pointer;font-family:inherit;transition:transform .12s ease,background .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-wa{background:var(--gruen);color:#fff;border-color:var(--gruen)}
+.btn-wa:hover{background:var(--gruen-dunkel)}
+.btn-tel{background:#fff;color:var(--rot);border-color:var(--rot)}
+.btn-tel:hover{background:var(--zart)}
+.upload{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:16px}
+.btn-file{background:var(--zart);color:var(--rot-dunkel);border-color:var(--rot-dunkel);position:relative;overflow:hidden}
+.btn-file:hover{background:#E6E88C}
+.btn-file input{position:absolute;inset:0;opacity:0;cursor:pointer;font-size:100px}
+.filelist{font-size:15px;color:#6B5B4C}
+.filelist.has{color:var(--rot-dunkel);font-weight:600}
+.thumbs{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.thumbs img{width:66px;height:66px;object-fit:cover;border:2px solid var(--rot);border-radius:3px}
+.hint{font-size:15px;color:#6B5B4C;margin-top:12px}
+.facts{display:flex;gap:10px 22px;flex-wrap:wrap;margin-top:22px;font-size:16px;color:#6B5B4C}
+.facts b{color:var(--rot-dunkel);font-weight:600}
+
+/* ---- Sortimentsliste ---- */
+.cabinet{background:var(--rot-dunkel);padding:16px}
+.cabinet-top{color:var(--sand);font-size:15px;padding:2px 4px 13px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}
+@media(min-width:560px){.tiles{grid-template-columns:repeat(3,1fr)}}
+.tile{background:linear-gradient(#EBD6AE,#D6BA85);border:none;text-align:left;cursor:pointer;color:#3E2B0C;font-family:inherit;padding:11px 12px 12px;display:block;width:100%;box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 2px 0 rgba(0,0,0,.3);transition:transform .12s ease,background .15s}
+.tile:hover,.tile:focus-visible{transform:translateY(-3px);background:linear-gradient(#F6E7C6,#E3CB9B)}
+.tile:focus-visible{outline:3px solid var(--zart);outline-offset:2px}
+.tile b{display:block;font-size:16.5px;font-weight:700;line-height:1.2}
+.tile span{display:block;font-size:14px;color:#5C441A;margin-top:4px;line-height:1.32}
+.cabinet-note{color:var(--sand);font-size:15px;padding:14px 4px 2px}
+
+/* ---- Foto und Reim ---- */
+.laden{background:var(--zart);padding:clamp(32px,5vw,60px) 0}
+.laden-grid{display:grid;gap:clamp(22px,4vw,42px);grid-template-columns:1fr;align-items:center}
+@media(min-width:860px){.laden-grid{grid-template-columns:1.15fr .85fr}}
+.laden img{width:100%;height:auto;display:block;border:6px solid #fff;box-shadow:0 3px 14px rgba(42,28,20,.18)}
+.reim{font-family:"Fira Sans Condensed",sans-serif;font-weight:600;font-size:clamp(20px,2.3vw,26px);line-height:1.38;color:var(--rot-dunkel)}
+.reim span{display:block}
+.reim em{display:block;font-style:normal;font-weight:700;color:var(--rot);margin-top:14px}
+
+/* ---- Sektionen ---- */
+section{padding:clamp(40px,5.5vw,78px) 0}
+.rule{border-top:1.5px solid rgba(168,30,36,.22)}
+.dark{background:var(--rot-dunkel);color:#F6E7CC}
+.dark h2{color:#fff}
+.sec-head{max-width:28em;margin-bottom:clamp(24px,3.5vw,40px)}
+.sec-head p{margin-top:14px;color:#4A382C;font-size:17.5px}
+.dark .sec-head p{color:#EDD9BC}
+.cols{display:grid;gap:1.5px;background:rgba(168,30,36,.2);grid-template-columns:1fr}
+@media(min-width:760px){.cols-3{grid-template-columns:repeat(3,1fr)}.cols-2{grid-template-columns:repeat(2,1fr)}}
+.cell{background:var(--grund);padding:24px 22px 28px}
+.dark .cols{background:rgba(255,255,255,.18)}
+.dark .cell{background:var(--rot-dunkel)}
+.stat{font-family:"Fira Sans Condensed",sans-serif;font-size:42px;font-weight:700;line-height:1;color:var(--rot)}
+.dark .stat{color:var(--sand)}
+.cell h3{margin:12px 0 7px}
+.cell p{font-size:16.5px;color:#4A382C}
+.dark .cell p{color:#EDD9BC}
+.meta{font-size:15px;color:var(--sand-text);margin-top:12px;display:block;font-weight:500}
+.dark .meta{color:var(--sand)}
+.sec-cta{margin-top:26px;display:flex;gap:10px;flex-wrap:wrap}
+
+/* ---- Footer ---- */
+footer{background:var(--rot-dunkel);color:#EDD9BC;padding:clamp(36px,5vw,64px) 0 34px}
+.f-grid{display:grid;gap:26px;grid-template-columns:1fr}
+@media(min-width:700px){.f-grid{grid-template-columns:repeat(3,1fr)}}
+footer h3{color:#fff;font-size:17px;margin-bottom:10px}
+footer p,footer a{font-size:16.5px;color:#EDD9BC;text-decoration:none}
+footer a:hover{color:#fff}
+.f-slogan{font-family:"Lobster",cursive;font-size:clamp(21px,3.2vw,31px);color:var(--sand);margin-top:36px;line-height:1.25}
+
+/* ---- Feste Aktionsleiste, nur Handy ---- */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:80;display:flex;background:#fff;border-top:2px solid var(--rot);box-shadow:0 -3px 12px rgba(42,28,20,.16)}
+.sticky a{flex:1;padding:15px 8px;text-align:center;font-weight:600;font-size:16.5px;text-decoration:none}
+.sticky .wa{background:var(--gruen);color:#fff}
+.sticky .tel{color:var(--rot)}
+@media(min-width:860px){.sticky{display:none}}
+@media(max-width:859px){body{padding-bottom:62px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="masthead-in">
+    <span class="brand"><img src="assets/logo.png" alt="Farben Nagel" width="864" height="477"></span>
+    <span class="shot"><img src="assets/band.jpg" alt="Blick in den Laden: Regale, Eimer, Besen und das Schild Für Heimwerker Farben Nagel"></span>
+  </div>
+</div>
+
+<div class="info">
+  <div class="wrap">
+    <span><span class="dot" id="dot"></span><b id="openState">Jetzt geöffnet</b></span>
+    <span>Mo–Sa 8:00–20:00</span>
+    <span>Gutenbergstr. 65, Stuttgart-West</span>
+    <span><a href="tel:+497116150120">0711 615 01 20</a></span>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Willst Du im Hause etwas machen,<br>Farben Nagel hat die Sachen</h1>
+      <p class="lead">Heimwerkermarkt in Stuttgart-West seit 1966. Über 10.000 Artikel auf zwei Gängen — Schrauben ab einem Stück, Farbe nach Wunsch gemischt, und jemand, der weiß, welche passt.</p>
+
+      <div class="ask">
+        <h2>Haben Sie das?</h2>
+        <p class="sub">Beschreiben Sie, was Sie brauchen. Wir antworten während der Öffnungszeiten und legen es auf Wunsch zur Abholung bereit.</p>
+        <textarea id="msg" aria-label="Ihre Anfrage" placeholder="Zum Beispiel: Siphon unter der Küchenspüle undicht, Gewinde 1 1/2 Zoll — haben Sie eine Dichtung?"></textarea>
+
+        <div class="routes">
+          <div class="route">
+            <h3>WhatsApp</h3>
+            <p>Der schnellste Weg. Fotos hängen Sie direkt im Chat an.</p>
+            <a class="btn btn-wa" id="waLink" href="#" target="_blank" rel="noopener">Nachricht senden</a>
+          </div>
+          <div class="route">
+            <h3>E-Mail mit Anhang</h3>
+            <p>Für Foto, Zeichnung oder Materialliste als PDF.</p>
+            <button class="btn btn-mail" type="button" id="mailToggle" aria-expanded="false" aria-controls="mailform">Anhang wählen</button>
+          </div>
+          <div class="route">
+            <h3>Anrufen</h3>
+            <p>Wenn es eilt oder sich schlecht schreiben lässt.</p>
+            <a class="btn btn-tel" href="tel:+497116150120">0711 615 01 20</a>
+          </div>
+        </div>
+
+        <form class="mailform" id="mailform" action="https://formspree.io/f/FORMULAR-ID" method="post" enctype="multipart/form-data" hidden>
+          <div class="frow">
+            <label>Name<input type="text" name="name" autocomplete="name" required></label>
+            <label>E-Mail für die Antwort<input type="email" name="email" autocomplete="email" required></label>
+          </div>
+          <input type="hidden" name="anfrage" id="mailtext">
+          <div class="upload">
+            <label class="btn btn-file" for="file">Foto oder Datei anhängen
+              <input type="file" id="file" name="anhang" accept="image/*,application/pdf" multiple>
+            </label>
+            <span class="filelist" id="filelist">Kein Anhang gewählt</span>
+          </div>
+          <div class="thumbs" id="thumbs"></div>
+          <button class="btn btn-mail" type="submit" style="margin-top:16px">Anfrage abschicken</button>
+          <p class="hint">Ihre Angaben gehen ausschließlich an Farben Nagel und werden nur zur Beantwortung dieser Anfrage verwendet.</p>
+        </form>
+
+        <p class="hint">Keine Vorkasse, keine Anmeldung. Reservierung bis Ladenschluss.</p>
+      </div>
+
+      <p class="facts"><span>Zu Fuß aus dem halben Westen</span><span>Kein Auto nötig</span><span><b>Sechs Tage bis 20 Uhr offen</b></span></p>
+    </div>
+
+    <div class="cabinet">
+      <div class="cabinet-top"><span>Sortiment</span><span>Antippen übernimmt es in die Anfrage</span></div>
+      <div class="tiles" id="tiles"></div>
+      <p class="cabinet-note">Nicht dabei? Wird bestellt — meist über Nacht.</p>
+    </div>
+  </div>
+</header>
+
+<div class="laden">
+  <div class="wrap laden-grid">
+    <img src="assets/laden.jpg" alt="Die Ladenfront von Farben Nagel in der Gutenbergstraße mit Auslage auf dem Gehweg">
+    <p class="reim">
+      <span>Fehlt zwischendurch — das ist doch übel —</span>
+      <span>’ne Schraube, Mutter oder Dübel</span>
+      <span>oder ein and’res Einzelstück,</span>
+      <span>dann hat man bei uns wirklich Glück!</span>
+      <em>Wir haben alles auch einzeln da.</em>
+    </p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Warum hier und nicht dort</h2>
+      <p>Wir sind nicht billiger als ein Baumarkt auf 10.000 Quadratmetern. Wir sind schneller, kleinteiliger und wir antworten.</p>
+    </div>
+    <div class="cols cols-3">
+      <div class="cell">
+        <div class="stat">72 Std.</div>
+        <h3>Offen pro Woche</h3>
+        <p>Montag bis Samstag von 8 bis 20 Uhr. Vor der Frühschicht und nach dem Feierabend — dann, wenn andere zu haben.</p>
+        <span class="meta">Mo–Sa 8:00–20:00</span>
+      </div>
+      <div class="cell">
+        <div class="stat">1 Stück</div>
+        <h3>Statt 100er-Box</h3>
+        <p>Schrauben, Muttern, Dübel, Sicherungen, Dichtungen — einzeln abgegeben. Auch die eine, die fehlt.</p>
+        <span class="meta">Einzelabgabe</span>
+      </div>
+      <div class="cell">
+        <div class="stat">Ein Mensch</div>
+        <h3>Statt Suchfunktion</h3>
+        <p>Beschreiben Sie das Problem, nicht das Produkt. Wir übersetzen das in den passenden Artikel.</p>
+        <span class="meta">Beratung inklusive</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Was wir machen, während Sie warten</h2>
+      <p>Die Dinge, für die man sonst zwei Termine und eine Woche braucht.</p>
+    </div>
+    <div class="cols cols-3">
+      <div class="cell"><h3>Farbe mischen</h3><p>Wandfarbe, Lack und Lasur nach Wunschton. Muster mitbringen, wir treffen ihn.</p><span class="meta">ca. 15 Minuten</span></div>
+      <div class="cell"><h3>Schlüssel</h3><p>Nachschlüssel für Wohnung, Keller, Briefkasten, Fahrradschloss.</p><span class="meta">ca. 5 Minuten</span></div>
+      <div class="cell"><h3>Zuschnitt</h3><p>Leisten, Kabel, Kette, Schlauch — auf Maß, direkt im Laden.</p><span class="meta">nach Bedarf</span></div>
+      <div class="cell"><h3>Lieferung im Westen</h3><p>Sperriges kommt zu Ihnen. Innerhalb des Viertels am selben Tag.</p><span class="meta">gleicher Tag</span></div>
+      <div class="cell"><h3>Bestellservice</h3><p>Was nicht im Regal steht, ordern wir. Meist am nächsten Vormittag da.</p><span class="meta">über Nacht</span></div>
+      <div class="cell"><h3>Reservieren</h3><p>Anrufen oder schreiben, wir legen es mit Ihrem Namen an die Kasse.</p><span class="meta">bis Ladenschluss</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="rule">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Für Handwerk, Hausverwaltung und Gastronomie</h2>
+      <p>Ein Trupp, der auf ein Bauteil wartet, kostet mehr als jede Preisdifferenz. Wir sind fünf Minuten entfernt und führen ein Rechnungskonto.</p>
+    </div>
+    <div class="cols cols-2">
+      <div class="cell"><h3>Rechnungskonto</h3><p>Kauf auf Kundennummer, Sammelrechnung zum Monatsende, Lieferschein pro Objekt.</p></div>
+      <div class="cell"><h3>Abholfach</h3><p>Material telefonisch durchgeben, kommissioniert bereitstellen lassen, morgens mitnehmen.</p></div>
+      <div class="cell"><h3>Objektlieferung</h3><p>Anlieferung an Baustellen und Objekte im Westen, Süden und der Innenstadt.</p></div>
+      <div class="cell"><h3>Feste Ansprechperson</h3><p>Eine Nummer, ein Name, kein Callcenter. Auch für Standardlisten und Wiederkehrbedarf.</p></div>
+    </div>
+    <div class="sec-cta">
+      <a class="btn btn-wa" id="waB2B" href="#" target="_blank" rel="noopener">Rechnungskonto anfragen</a>
+      <a class="btn btn-tel" href="tel:+497116150120">0711 615 01 20</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <h3>Farben Nagel</h3>
+        <p>Gutenbergstraße 65<br>70176 Stuttgart-West</p>
+        <p style="margin-top:10px"><a href="tel:+497116150120">0711 615 01 20</a></p>
+      </div>
+      <div>
+        <h3>Öffnungszeiten</h3>
+        <p>Montag – Samstag &nbsp;8:00 – 20:00<br>Sonntag &nbsp;geschlossen</p>
+        <p style="margin-top:8px;opacity:.75">An Feiertagen abweichend.</p>
+      </div>
+      <div>
+        <h3>Der Weg zu uns</h3>
+        <p><b>Auto:</b> Rotebühlstraße bis Kreuzung Schwabstraße (REWE), rechts, an der nächsten Kreuzung noch mal rechts.<br>
+        <b>S-Bahn:</b> S1–S5 bis Schwabstraße, Ausgang Richtung Stadtmitte.<br>
+        <b>Bus:</b> Linie 42 und 44.</p>
+      </div>
+    </div>
+    <p class="f-slogan">Deine Mäuse kannst Du sparen —<br>und brauchst nicht so weit zu fahren!</p>
+  </div>
+</footer>
+
+<nav class="sticky" aria-label="Schnellkontakt">
+  <a class="wa" id="waSticky" href="#" target="_blank" rel="noopener">Per WhatsApp fragen</a>
+  <a class="tel" href="tel:+497116150120">Anrufen</a>
+</nav>
+
+<script>
+var NR="497116150120";
+var SORTIMENT=[
+ ["Farben & Lacke","Wandfarbe, Lack, Lasur, Grundierung — im Wunschton gemischt"],
+ ["Eisenwaren","Schrauben, Muttern, Dübel, Winkel, Ketten — ab einem Stück"],
+ ["Werkzeug","Bohren, sägen, schrauben, messen, plus Material dazu"],
+ ["Sanitär","Dichtungen, Siphons, Perlatoren, Spülkastenteile. Und ja: Pümpel"],
+ ["Elektro","Sicherungen, Leuchtmittel, Klemmen, Kabel, Mehrfachstecker"],
+ ["Boden & Tapete","Belag, Leisten, Kleber, Tapete, Kleister, Profile"],
+ ["Garten & Balkon","Gartengeräte, Pflanzenzubehör, Erde, Töpfe, Schlauch, Streugut"],
+ ["Haushalt","Glühbirne, Batterie, Filtertüte, Eimer, Besen, Wäschespinne"],
+ ["Schlüssel","Nachschlüssel für Wohnung, Keller, Briefkasten, Fahrradschloss"]
+];
+var tiles=document.getElementById("tiles");
+tiles.innerHTML=SORTIMENT.map(function(a){
+ return '<button class="tile" data-bereich="'+a[0]+'"><b>'+a[0]+'</b><span>'+a[1]+'</span></button>';
+}).join("");
+
+var ta=document.getElementById("msg");
+var wa=document.getElementById("waLink");
+var waSticky=document.getElementById("waSticky");
+var waB2B=document.getElementById("waB2B");
+
+function link(text){return "https://wa.me/"+NR+"?text="+encodeURIComponent(text);}
+var mailtext=document.getElementById("mailtext");
+function sync(){
+ var t=ta.value.trim();
+ wa.href=link(t||"Guten Tag, ich suche ");
+ waSticky.href=link(t||"Guten Tag, ich suche ");
+ mailtext.value=t;
+}
+var mf=document.getElementById("mailform"), mt=document.getElementById("mailToggle");
+mt.addEventListener("click",function(){
+ var offen=mf.hidden;
+ mf.hidden=!offen;
+ mt.setAttribute("aria-expanded",offen?"true":"false");
+ mt.textContent=offen?"Anhang ausblenden":"Anhang wählen";
+ if(offen) mf.scrollIntoView({block:"nearest",behavior:"smooth"});
+});
+ta.addEventListener("input",sync);
+waB2B.href=link("Guten Tag, wir sind ein Betrieb im Westen und möchten ein Rechnungskonto anlegen.");
+
+tiles.addEventListener("click",function(e){
+ var b=e.target.closest(".tile"); if(!b)return;
+ var v="Ich suche etwas aus dem Bereich "+b.dataset.bereich+": ";
+ ta.value=v; sync();
+ ta.focus();
+ ta.setSelectionRange(v.length,v.length);
+ ta.scrollIntoView({block:"center",behavior:"smooth"});
+});
+
+var fi=document.getElementById("file"), fl=document.getElementById("filelist"), th=document.getElementById("thumbs");
+fi.addEventListener("change",function(){
+ var n=fi.files.length;
+ fl.textContent=n?(n===1?fi.files[0].name:n+" Dateien gewählt"):"Kein Anhang gewählt";
+ fl.className="filelist"+(n?" has":"");
+ th.innerHTML="";
+ Array.prototype.forEach.call(fi.files,function(f){
+  if(!f.type.indexOf("image")){var i=document.createElement("img");i.src=URL.createObjectURL(f);i.alt=f.name;th.appendChild(i);}
+ });
+});
+
+(function(){
+ var d=new Date(), day=d.getDay(), m=d.getHours()*60+d.getMinutes(), o=false;
+ if(day>=1&&day<=6) o=m>=480&&m<1200;
+ document.getElementById("openState").textContent=o?"Jetzt geöffnet":"Gerade geschlossen";
+ document.getElementById("dot").className="dot"+(o?"":" zu");
+})();
+sync();
+</script>
+</body>
+</html>
