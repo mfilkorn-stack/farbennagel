@@ -49,7 +49,8 @@ Ein `@graph` mit fünf Typen. Das vollständige JSON-LD steht in Abschnitt 8.
 
 - **`HardwareStore`** — Name, Beschreibung, Bilder, Logo, Telefon, E-Mail,
   `foundingDate: "1966"`, `address` als `PostalAddress`,
-  `openingHoursSpecification` Mo–Sa 08:00–20:00, `areaServed`, `currenciesAccepted`.
+  `openingHoursSpecification` Mo–Sa 08:00–20:00, `areaServed`, `priceRange`,
+  `currenciesAccepted`, `sameAs`.
 - **`hasOfferCatalog`** — 9 Sortimentsbereiche als `Product`, 7 Leistungen als
   `Service`, wörtlich aus dem Seiteninhalt gespiegelt.
 - **`WebSite`**, **`WebPage`**, **`BreadcrumbList`**.
@@ -57,9 +58,13 @@ Ein `@graph` mit fünf Typen. Das vollständige JSON-LD steht in Abschnitt 8.
   der Seite; das ist Googles Bedingung, unsichtbares FAQ-Markup ist ein
   Richtlinienverstoß.
 
-**Bewusst leer gelassen:** `geo`, `priceRange`, `sameAs`. Diese Felder stehen als
-`TODO`-Kommentar direkt über dem JSON-LD. Erfundene Werte würden hier aktiv
-schaden.
+**Nachgetragen:** `priceRange` `"€–€€"` („günstig bis mittel") und `sameAs` mit
+dem Google-Profil.
+
+**Weiterhin offen:** `geo`. Das Feld bleibt leer, bis Sie mir die zwei Zahlen
+nennen — der fertige Einfügeblock steht als Kommentar über dem JSON-LD. Eine
+geratene Koordinate würde den Kartenpunkt falsch setzen und wäre schlimmer als
+gar keine Angabe.
 
 ### C — Inhalt für Antwortmaschinen
 
@@ -327,9 +332,9 @@ Die `.htaccess` enthält außerdem HTTPS-Erzwingung, `www`-Vereinheitlichung,
 | # | Punkt | Warum es fehlt | Wirkung |
 |---|---|---|---|
 | 1 | **`canonical` zeigt auf `www.farben-nagel.de`** | Sie sagten, die Domain kommt später wieder | **Solange die Seite auf `github.io` liegt und die Domain nicht aufgelöst wird, sollte sie nicht öffentlich indexiert werden.** Das ist bewusst so gewählt: Der Zwischenstand auf `github.io` sammelt so keine Rankings ein, die Sie später mühsam umziehen müssten. |
-| 2 | **`geo` (Koordinaten)** | nicht geliefert | Stärkstes Einzelsignal für die Kartensuche. In Google Maps Rechtsklick auf den Laden, die zwei Zahlen an mich. |
-| 3 | **`priceRange`** | nicht geliefert | Google zeigt es im Unternehmensfeld. `€` oder `€€`. |
-| 4 | **`sameAs`** | nicht geliefert | Verknüpft Website, Google-Profil und Verzeichnisse zu einer Entität. Deutlicher Hebel. |
+| 2 | **`geo` (Koordinaten)** | **konnte ich nicht beschaffen** | Sie haben „Koordinaten einbinden" geschrieben, aber keine Werte genannt. Ich habe versucht, sie selbst zu ermitteln — die Netzwerkrichtlinie dieser Arbeitsumgebung sperrt Google, OpenStreetMap/Nominatim und sämtliche Branchenportale. Geraten wird hier nicht: Eine falsche Koordinate setzt den Kartenpunkt daneben und ist schlimmer als gar keine. **Sie brauchen 30 Sekunden dafür:** Google Maps öffnen, rechte Maustaste auf den Laden, der erste Menüeintrag sind die beiden Zahlen. Der fertige Einfügeblock steht als Kommentar direkt über dem JSON-LD in `index.html`. |
+| 3 | ~~`priceRange`~~ | **erledigt** | „günstig bis mittel" → `"€–€€"` im JSON-LD. |
+| 4 | ~~`sameAs`~~ | **erledigt, mit Einschränkung** | `https://share.google/EQXQ9cRnmyeXcMngn` ist eingetragen. Das ist ein Google-Kurzlink — er funktioniert, ist aber eine undurchsichtige Weiterleitung. Ich konnte ihn nicht auflösen (Google ist gesperrt), also habe ich ihn unverändert übernommen. **Besser wäre die direkte Adresse** Ihres Unternehmensprofils (`https://www.google.com/maps/place/…`): Sie bleibt gültig, auch wenn Google den Kurzdienst einstellt. Schicken Sie sie mir, dann tausche ich sie. |
 | 5 | **Parken** | nicht geliefert | Häufige Suchfrage. FAQ-Antwort behandelt derzeit nur die Anfahrt. |
 | 6 | **Nachbarquartiere** | Frage 6 unbeantwortet | Bessere geografische Verankerung für Modelle. |
 | 7 | ~~Kontaktformular~~ | **erledigt** | Auf `mailto:` umgestellt, siehe Abschnitt 2 F. |
@@ -372,8 +377,35 @@ führen. Das ist der schädlichste Einzelposten in der ganzen Liste: Widersprüc
 untergraben das Vertrauen der Suchmaschinen in **alle** Ihre Angaben, und
 Kundschaft, die vor verschlossener Tür steht, kommt nicht wieder. Legen Sie eine
 Referenzfassung fest — Name, Anschrift, Telefon, Zeiten, exakt wie im Impressum —
-und ziehen Sie jedes Verzeichnis darauf nach. Die Reihenfolge: Google, Apple,
-Bing, Das Örtliche, Gelbe Seiten, Yelp, 11880.
+und ziehen Sie jedes Verzeichnis darauf nach.
+
+**Diese Einträge habe ich per Websuche gefunden.** Bitte jeden einzeln prüfen und
+auf die Referenzfassung bringen. Ich konnte die Seiten nicht selbst öffnen (die
+Netzwerkrichtlinie dieser Umgebung sperrt sie), die Liste stammt aus den
+Suchergebnissen — also bitte verifizieren, ob wirklich überall Ihr Betrieb
+gemeint ist:
+
+| Verzeichnis | Adresse |
+|---|---|
+| Yelp | `yelp.de/biz/farben-nagel-stuttgart` |
+| Das Örtliche | `dasoertliche.de/Themen/Farben-Nagel-Stuttgart-West-Gutenbergstr` |
+| Gelbe Seiten | `gelbeseiten.de/gsbiz/0e636904-5deb-499f-9d9b-e11f9a121dbe` |
+| golocal | `golocal.de/stuttgart/farben/farben-nagel-YUGRH/` |
+| onlinestreet | zwei getrennte Einträge — einer unter „Haushaltswaren", einer unter „Heimwerken" |
+| öffnungszeitenbuch | `oeffnungszeitenbuch.de/filiale/Stuttgart-Farben%20Nagel-4193207Y.html` |
+| nochoffen.de | `nochoffen.de/stuttgart-farben-nagel-2` |
+
+Zwei Beobachtungen dazu, die Aufwand sparen:
+
+- **Bei onlinestreet stehen zwei Einträge für denselben Laden** („Farben Nagel"
+  unter Haushaltswaren, „Farben-Nagel" unter Heimwerken). Doppeleinträge
+  schwächen beide. Einen zusammenführen oder löschen lassen.
+- **Die Schreibweise schwankt** zwischen „Farben Nagel" und „Farben-Nagel", die
+  Anschrift zwischen „Gutenbergstr. 65" und „Gutenbergstraße 65". Legen Sie eine
+  Fassung fest — ich empfehle „Farben Nagel" und „Gutenbergstraße 65", passend
+  zum Impressum — und verwenden Sie sie überall wortgleich.
+
+Reihenfolge der Abarbeitung: Google, Apple, Bing, dann die Liste oben.
 
 **3 — Bewertungen einsammeln**
 *Aufwand: gering, aber dauerhaft · Wirkung: sehr hoch*
@@ -487,7 +519,9 @@ Steht in `index.html` unmittelbar vor `</body>`. Hier zur Durchsicht:
       "telephone": "+49 711 6150120",
       "email": "info@farben-nagel.de",
       "foundingDate": "1966",
+      "priceRange": "€–€€",
       "currenciesAccepted": "EUR",
+      "sameAs": ["https://share.google/EQXQ9cRnmyeXcMngn"],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Gutenbergstraße 65",

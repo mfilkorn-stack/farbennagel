@@ -580,11 +580,21 @@ sync();
 </script>
 
 <!--
-  Strukturierte Daten. Noch offen und deshalb bewusst NICHT gesetzt:
-  TODO geo         — Breiten- und Längengrad des Ladens (Google Maps, Rechtsklick)
-  TODO priceRange  — grobe Preisspanne, z. B. "€" oder "€€"
-  TODO sameAs      — URLs von Google-Unternehmensprofil, Facebook, Das Örtliche usw.
-  Erfundene Werte würden hier aktiv schaden, deshalb bleiben die Felder leer.
+  Strukturierte Daten.
+
+  NOCH OFFEN: geo (Breiten- und Längengrad).
+  So kommen Sie an die Werte: in Google Maps mit der rechten Maustaste auf den
+  Laden klicken, der erste Eintrag im Menü sind die beiden Zahlen. Dann diesen
+  Block direkt nach "address" einfügen und die Platzhalter ersetzen:
+
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 48.xxxxxx,
+        "longitude": 9.xxxxxx
+      },
+
+  Bis dahin bleibt das Feld weg. Eine geratene Koordinate würde den Kartenpunkt
+  falsch setzen und wäre schlimmer als gar keine Angabe.
 -->
 <script type="application/ld+json">
 {
@@ -606,7 +616,11 @@ sync();
       "telephone": "+49 711 6150120",
       "email": "info@farben-nagel.de",
       "foundingDate": "1966",
+      "priceRange": "€–€€",
       "currenciesAccepted": "EUR",
+      "sameAs": [
+        "https://share.google/EQXQ9cRnmyeXcMngn"
+      ],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Gutenbergstraße 65",
