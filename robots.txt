@@ -1,0 +1,80 @@
+# robots.txt — Farben Nagel, Heimwerkermarkt Stuttgart-West
+# https://www.farben-nagel.de/
+
+# ----------------------------------------------------------------------
+# Klassische Suchmaschinen
+# ----------------------------------------------------------------------
+User-agent: *
+Allow: /
+Disallow: /assets/original/
+
+# ----------------------------------------------------------------------
+# Antwortmaschinen und KI-Crawler
+#
+# Ausdrücklich erlaubt. Begründung: Farben Nagel ist ein lokales
+# Ladengeschäft, das gefunden werden will. Die Inhalte dieser Seite sind
+# Öffnungszeiten, Sortiment und Anfahrt — Informationen, die ohnehin für
+# Kundschaft bestimmt sind. Wer diese Crawler aussperrt, verschwindet aus
+# den Antworten von ChatGPT, Claude, Perplexity und Google AI Overviews,
+# ohne dafür etwas zu schützen.
+# ----------------------------------------------------------------------
+
+# OpenAI — ChatGPT-Suche und Training
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic — Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google — Gemini und AI Overviews
+User-agent: Google-Extended
+Allow: /
+
+# Apple — Apple Intelligence und Siri
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Common Crawl — Datengrundlage vieler Modelle
+User-agent: CCBot
+Allow: /
+
+# Microsoft — Copilot
+User-agent: bingbot
+Allow: /
+
+# Meta
+User-agent: meta-externalagent
+Allow: /
+
+# Mistral
+User-agent: MistralAI-User
+Allow: /
+
+# ----------------------------------------------------------------------
+Sitemap: https://www.farben-nagel.de/sitemap.xml

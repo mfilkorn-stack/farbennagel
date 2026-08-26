@@ -3,12 +3,58 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Farben Nagel — Heimwerkermarkt in Stuttgart-West, Gutenbergstr. 65</title>
-<meta name="description" content="Willst Du im Hause etwas machen, Farben Nagel hat die Sachen. Heimwerkermarkt in Stuttgart-West seit 1966: Farben, Eisenwaren, Sanitär, Elektro, Werkzeug — auch einzeln. Foto schicken, wir sagen, ob wir es haben.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Fira+Sans+Condensed:wght@600;700&family=Fira+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Farben Nagel — Heimwerkermarkt Stuttgart-West, Mo–Sa bis 20 Uhr</title>
+<meta name="description" content="Heimwerkermarkt in Stuttgart-West seit 1966: Farbe nach Wunschton, Schrauben ab einem Stück, Sanitär, Elektro, Schlüssel. Mo–Sa 8–20 Uhr, Gutenbergstraße 65.">
+<link rel="canonical" href="https://www.farben-nagel.de/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#A81E24">
+<meta name="author" content="Farben Nagel">
+<meta name="geo.region" content="DE-BW">
+<meta name="geo.placename" content="Stuttgart-West">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="business.business">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Farben Nagel">
+<meta property="og:title" content="Farben Nagel — Heimwerkermarkt Stuttgart-West, Mo–Sa bis 20 Uhr">
+<meta property="og:description" content="Heimwerkermarkt in Stuttgart-West seit 1966: Farbe nach Wunschton, Schrauben ab einem Stück, Sanitär, Elektro, Schlüssel. Mo–Sa 8–20 Uhr, Gutenbergstraße 65.">
+<meta property="og:url" content="https://www.farben-nagel.de/">
+<meta property="og:image" content="https://www.farben-nagel.de/assets/og-bild.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Die Ladenfront von Farben Nagel in der Gutenbergstraße in Stuttgart-West">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Farben Nagel — Heimwerkermarkt Stuttgart-West, Mo–Sa bis 20 Uhr">
+<meta name="twitter:description" content="Heimwerkermarkt in Stuttgart-West seit 1966: Farbe nach Wunschton, Schrauben ab einem Stück, Sanitär, Elektro, Schlüssel. Mo–Sa 8–20 Uhr.">
+<meta name="twitter:image" content="https://www.farben-nagel.de/assets/og-bild.jpg">
+
+<!-- Symbole -->
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="favicon-16.png" sizes="16x16">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<!-- Schriften: lokal ausgeliefert, kein Aufruf an Google (DSGVO) -->
+<link rel="preload" href="assets/schrift/fira-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/schrift/fira-sans-condensed-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+/* ===== SCHRIFTEN, lokal ===== */
+@font-face{font-family:"Fira Sans";font-style:normal;font-weight:400;font-display:swap;
+  src:url(assets/schrift/fira-sans-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Fira Sans";font-style:normal;font-weight:500;font-display:swap;
+  src:url(assets/schrift/fira-sans-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Fira Sans";font-style:normal;font-weight:600;font-display:swap;
+  src:url(assets/schrift/fira-sans-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Fira Sans";font-style:normal;font-weight:700;font-display:swap;
+  src:url(assets/schrift/fira-sans-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Fira Sans Condensed";font-style:normal;font-weight:600;font-display:swap;
+  src:url(assets/schrift/fira-sans-condensed-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Fira Sans Condensed";font-style:normal;font-weight:700;font-display:swap;
+  src:url(assets/schrift/fira-sans-condensed-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Lobster";font-style:normal;font-weight:400;font-display:swap;
+  src:url(assets/schrift/lobster-latin-400-normal.woff2) format("woff2")}
+
 /* ===== MARKE ===== */
 :root{
   --rot:#A81E24;
@@ -31,6 +77,9 @@ h2{font-size:clamp(28px,4.6vw,44px)}
 h3{font-size:20px;font-family:"Fira Sans",sans-serif;font-weight:600;line-height:1.25}
 p{margin:0}
 a{color:inherit}
+/* <address> ist im Browser-Standard kursiv — hier neutralisiert, damit die
+   Fußzeile unverändert aussieht. Keine Gestaltungsänderung. */
+address{font-style:normal}
 
 /* ---- Icons ---- */
 .icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
@@ -173,6 +222,9 @@ footer h3 .icon{color:var(--sand)}
 footer p,footer a{font-size:16.5px;color:#EDD9BC;text-decoration:none}
 footer a:hover{color:#fff}
 .f-slogan{font-family:"Lobster",cursive;font-size:clamp(21px,3.2vw,31px);color:var(--sand);margin-top:36px;line-height:1.25}
+.f-recht{margin-top:26px;padding-top:18px;border-top:1px solid rgba(255,255,255,.16);display:flex;gap:24px;flex-wrap:wrap}
+.f-recht a{font-size:15.5px;opacity:.85}
+.f-recht a:hover{opacity:1}
 
 /* ---- Feste Aktionsleiste, nur Handy ---- */
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:80;display:flex;background:#fff;border-top:2px solid var(--rot);box-shadow:0 -3px 12px rgba(42,28,20,.16)}
@@ -214,12 +266,14 @@ footer a:hover{color:#fff}
   <symbol id="i-walk" viewBox="0 0 24 24"><circle cx="13" cy="4" r="2"/><path d="M9.5 22l1.2-5.5-2.2-1.7.6-4.3 3 .7 1.9 3.1h2.5"/><path d="M8.5 12.5 6 14.5 4.5 20"/></symbol>
 </svg>
 
-<div class="masthead">
+<header class="masthead">
   <div class="masthead-in">
-    <span class="brand"><img src="assets/logo.png" alt="Farben Nagel" width="864" height="477"></span>
-    <span class="shot"><img src="assets/band.jpg" alt="Blick in den Laden: Regale, Eimer, Besen und das Schild Für Heimwerker Farben Nagel"></span>
+    <span class="brand"><img src="assets/logo.png" alt="Farben Nagel — Heimwerkermarkt in Stuttgart-West" width="560" height="309" fetchpriority="high" decoding="async"></span>
+    <span class="shot"><picture>
+      <source srcset="assets/band.webp" type="image/webp">
+      <img src="assets/band.jpg" alt="Blick in den Laden von Farben Nagel: Regale, Eimer, Besen und das Schild Für Heimwerker" width="1800" height="214" fetchpriority="high" decoding="async"></picture></span>
   </div>
-</div>
+</header>
 
 <div class="info">
   <div class="wrap">
@@ -229,6 +283,8 @@ footer a:hover{color:#fff}
     <span><svg class="icon icon-sm" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+497116150120">0711 615 01 20</a></span>
   </div>
 </div>
+
+<main>
 
 <header class="hero">
   <div class="wrap">
@@ -295,7 +351,10 @@ footer a:hover{color:#fff}
 
 <div class="laden">
   <div class="wrap laden-grid">
-    <img src="assets/laden.jpg" alt="Die Ladenfront von Farben Nagel in der Gutenbergstraße mit Auslage auf dem Gehweg">
+    <picture>
+      <source srcset="assets/laden.webp" type="image/webp">
+      <img src="assets/laden.jpg" alt="Die Ladenfront von Farben Nagel in der Gutenbergstraße 65 in Stuttgart-West mit Auslage auf dem Gehweg" width="1100" height="711" loading="lazy" decoding="async">
+    </picture>
     <p class="reim">
       <span>Fehlt zwischendurch — das ist doch übel —</span>
       <span>’ne Schraube, Mutter oder Dübel</span>
@@ -371,13 +430,96 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
+<section class="rule" id="fragen">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Häufige Fragen</h2>
+      <p>Was Kundinnen und Kunden am Telefon und im Laden am häufigsten fragen.</p>
+    </div>
+    <div class="cols cols-2">
+      <div class="cell">
+        <h3>Wo bekomme ich in Stuttgart-West einzelne Schrauben, Muttern oder Dübel?</h3>
+        <p>Bei Farben Nagel in der Gutenbergstraße 65 in Stuttgart-West geben wir Schrauben, Muttern, Dübel, Sicherungen und Dichtungen einzeln ab — Sie müssen keine 100er-Packung kaufen. Bringen Sie das alte Teil oder ein Foto mit, dann finden wir das passende Gegenstück. Geöffnet ist Montag bis Samstag von 8 bis 20 Uhr.</p>
+      </div>
+      <div class="cell">
+        <h3>Kann ich Farbe in einem Wunschton mischen lassen?</h3>
+        <p>Ja. Farben Nagel mischt Wandfarbe, Lack und Lasur nach Wunschton, während Sie warten — in der Regel dauert das etwa fünfzehn Minuten. Bringen Sie ein Muster mit, etwa ein Stück Tapete, eine Leiste oder einen Farbfächer, dann treffen wir den Ton. Sie finden uns in der Gutenbergstraße 65 in Stuttgart-West.</p>
+      </div>
+      <div class="cell">
+        <h3>Wo kann ich in Stuttgart-West einen Schlüssel nachmachen lassen?</h3>
+        <p>Farben Nagel fertigt Nachschlüssel direkt im Laden an, meist in etwa fünf Minuten. Das gilt für Wohnungs-, Keller- und Briefkastenschlüssel sowie für Fahrradschlösser. Bringen Sie den Originalschlüssel mit. Sie finden uns in der Gutenbergstraße 65 in Stuttgart-West, montags bis samstags von 8 bis 20 Uhr.</p>
+      </div>
+      <div class="cell">
+        <h3>Welcher Heimwerkermarkt in Stuttgart hat samstags bis 20 Uhr offen?</h3>
+        <p>Der Heimwerkermarkt Farben Nagel in Stuttgart-West hat montags bis samstags von 8 bis 20 Uhr geöffnet, auch samstags bis zum Abend — das sind 72 Öffnungsstunden pro Woche. Sonntags ist geschlossen, an Feiertagen gelten abweichende Zeiten. Sie finden uns in der Gutenbergstraße 65, wenige Gehminuten von der Haltestelle Schwabstraße.</p>
+      </div>
+      <div class="cell">
+        <h3>Wie komme ich zu Farben Nagel?</h3>
+        <p>Farben Nagel liegt in der Gutenbergstraße 65 in Stuttgart-West. Mit der S-Bahn nehmen Sie die Linien S1 bis S5 zur Haltestelle Schwabstraße und gehen Richtung Stadtmitte. Die Buslinien 42 und 44 halten ebenfalls in der Nähe. Mit dem Auto fahren Sie die Rotebühlstraße bis zur Kreuzung Schwabstraße, dort rechts und an der nächsten Kreuzung noch einmal rechts.</p>
+      </div>
+      <div class="cell">
+        <h3>Liefern Sie im Stuttgarter Westen?</h3>
+        <p>Ja. Sperrige Ware liefert Farben Nagel innerhalb des Viertels am selben Tag aus. Für Handwerksbetriebe und Hausverwaltungen liefern wir auch an Baustellen und Objekte im Westen, im Süden und in der Innenstadt. Sprechen Sie uns im Laden an oder rufen Sie unter 0711 615 01 20 an.</p>
+      </div>
+      <div class="cell">
+        <h3>Gibt es ein Rechnungskonto für Handwerksbetriebe und Hausverwaltungen?</h3>
+        <p>Ja. Farben Nagel führt Rechnungskonten für Betriebe: Sie kaufen auf Kundennummer, erhalten eine Sammelrechnung zum Monatsende und pro Objekt einen Lieferschein. Material können Sie telefonisch durchgeben und kommissioniert abholen. Sie haben eine feste Ansprechperson statt eines Callcenters — gedacht für Handwerk, Hausverwaltung und Gastronomie.</p>
+      </div>
+      <div class="cell">
+        <h3>Was kostet die Beratung?</h3>
+        <p>Nichts. Die Beratung gehört bei Farben Nagel zum Einkauf. Beschreiben Sie das Problem, nicht das Produkt — wir übersetzen das in den passenden Artikel. Was nicht im Regal steht, bestellen wir; meist ist es am nächsten Vormittag da. Auf Wunsch legen wir die Ware bis Ladenschluss unter Ihrem Namen an die Kasse.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rule" id="ueberblick">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Farben Nagel in Kürze</h2>
+      <p>Die wichtigsten Angaben auf einen Blick.</p>
+    </div>
+    <div class="cols cols-3">
+      <div class="cell">
+        <h3>Betrieb</h3>
+        <p>Farben Nagel ist ein inhabergeführter Heimwerkermarkt in Stuttgart-West, gegründet 1966. Über 10.000 Artikel auf zwei Gängen.</p>
+      </div>
+      <div class="cell">
+        <h3>Ort und Anfahrt</h3>
+        <p>Gutenbergstraße 65, 70176 Stuttgart-West. S-Bahn S1–S5 bis Schwabstraße, Buslinien 42 und 44. Aus dem halben Westen zu Fuß erreichbar.</p>
+      </div>
+      <div class="cell">
+        <h3>Öffnungszeiten</h3>
+        <p>Montag bis Samstag von 8:00 bis 20:00 Uhr, sonntags geschlossen. Das sind 72 Öffnungsstunden pro Woche. An Feiertagen abweichend.</p>
+      </div>
+      <div class="cell">
+        <h3>Sortiment</h3>
+        <p>Farben und Lacke, Eisenwaren, Werkzeug, Sanitär, Elektro, Boden und Tapete, Garten und Balkon, Haushalt, Schlüssel.</p>
+      </div>
+      <div class="cell">
+        <h3>Leistungen</h3>
+        <p>Farbe nach Wunschton mischen, Zuschnitt, Nachschlüssel, Lieferung im Viertel, Bestellservice über Nacht, Reservierung zur Abholung.</p>
+      </div>
+      <div class="cell">
+        <h3>Besonderheiten</h3>
+        <p>Einzelabgabe ab einem Stück statt 100er-Box. Beratung durch einen Menschen. Rechnungskonto für Handwerk, Hausverwaltung und Gastronomie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
 <footer>
   <div class="wrap">
     <div class="f-grid">
       <div>
         <h3><svg class="icon icon-sm" aria-hidden="true"><use href="#i-pin"/></svg>Farben Nagel</h3>
-        <p>Gutenbergstraße 65<br>70176 Stuttgart-West</p>
-        <p style="margin-top:10px"><a href="tel:+497116150120">0711 615 01 20</a></p>
+        <address>
+          <p>Gutenbergstraße 65<br>70176 Stuttgart-West</p>
+          <p style="margin-top:10px"><a href="tel:+497116150120">0711 615 01 20</a></p>
+          <p><a href="mailto:info@farben-nagel.de">info@farben-nagel.de</a></p>
+        </address>
       </div>
       <div>
         <h3><svg class="icon icon-sm" aria-hidden="true"><use href="#i-clock"/></svg>Öffnungszeiten</h3>
@@ -392,6 +534,7 @@ footer a:hover{color:#fff}
       </div>
     </div>
     <p class="f-slogan">Deine Mäuse kannst Du sparen —<br>und brauchst nicht so weit zu fahren!</p>
+    <p class="f-recht"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></p>
   </div>
 </footer>
 
@@ -469,6 +612,166 @@ fi.addEventListener("change",function(){
  document.getElementById("dot").className="dot"+(o?"":" zu");
 })();
 sync();
+</script>
+
+<!--
+  Strukturierte Daten. Noch offen und deshalb bewusst NICHT gesetzt:
+  TODO geo         — Breiten- und Längengrad des Ladens (Google Maps, Rechtsklick)
+  TODO priceRange  — grobe Preisspanne, z. B. "€" oder "€€"
+  TODO sameAs      — URLs von Google-Unternehmensprofil, Facebook, Das Örtliche usw.
+  Erfundene Werte würden hier aktiv schaden, deshalb bleiben die Felder leer.
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HardwareStore",
+      "@id": "https://www.farben-nagel.de/#betrieb",
+      "name": "Farben Nagel",
+      "alternateName": "Farben Nagel Heimwerkermarkt",
+      "description": "Inhabergeführter Heimwerkermarkt in Stuttgart-West seit 1966. Farben, Lacke und Lasuren nach Wunschton gemischt, Eisenwaren mit Einzelabgabe ab einem Stück, Werkzeug, Sanitär, Elektro, Boden und Tapete, Garten, Haushalt und Schlüsseldienst.",
+      "url": "https://www.farben-nagel.de/",
+      "logo": "https://www.farben-nagel.de/assets/logo.png",
+      "image": [
+        "https://www.farben-nagel.de/assets/og-bild.jpg",
+        "https://www.farben-nagel.de/assets/laden.jpg",
+        "https://www.farben-nagel.de/assets/band.jpg"
+      ],
+      "telephone": "+49 711 6150120",
+      "email": "info@farben-nagel.de",
+      "foundingDate": "1966",
+      "currenciesAccepted": "EUR",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Gutenbergstraße 65",
+        "postalCode": "70176",
+        "addressLocality": "Stuttgart",
+        "addressRegion": "Baden-Württemberg",
+        "addressCountry": "DE"
+      },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "08:00",
+        "closes": "20:00"
+      }],
+      "areaServed": [
+        {"@type":"Place","name":"Stuttgart-West"},
+        {"@type":"Place","name":"Stuttgart-Mitte"},
+        {"@type":"Place","name":"Stuttgart-Süd"}
+      ],
+      "knowsLanguage": "de",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Sortiment und Leistungen",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Sortiment",
+            "itemListElement": [
+              {"@type":"Offer","itemOffered":{"@type":"Product","name":"Farben & Lacke","description":"Wandfarbe, Lack, Lasur, Grundierung — im Wunschton gemischt"}},
+              {"@type":"Offer","itemOffered":{"@type":"Product","name":"Eisenwaren","description":"Schrauben, Muttern, Dübel, Winkel, Ketten — ab einem Stück"}},
+              {"@type":"Offer","itemOffered":{"@type":"Product","name":"Werkzeug","description":"Bohren, sägen, schrauben, messen, plus Material dazu"}},
+              {"@type":"Offer","itemOffered":{"@type":"Product","name":"Sanitär","description":"Dichtungen, Siphons, Perlatoren, Spülkastenteile"}},
+              {"@type":"Offer","itemOffered":{"@type":"Product","name":"Elektro","description":"Sicherungen, Leuchtmittel, Klemmen, Kabel, Mehrfachstecker"}},
+              {"@type":"Offer","itemOffered":{"@type":"Product","name":"Boden & Tapete","description":"Belag, Leisten, Kleber, Tapete, Kleister, Profile"}},
+              {"@type":"Offer","itemOffered":{"@type":"Product","name":"Garten & Balkon","description":"Gartengeräte, Pflanzenzubehör, Erde, Töpfe, Schlauch, Streugut"}},
+              {"@type":"Offer","itemOffered":{"@type":"Product","name":"Haushalt","description":"Glühbirne, Batterie, Filtertüte, Eimer, Besen, Wäschespinne"}},
+              {"@type":"Offer","itemOffered":{"@type":"Product","name":"Schlüssel","description":"Nachschlüssel für Wohnung, Keller, Briefkasten, Fahrradschloss"}}
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Leistungen",
+            "itemListElement": [
+              {"@type":"Offer","itemOffered":{"@type":"Service","name":"Farbe mischen","description":"Wandfarbe, Lack und Lasur nach Wunschton, in etwa 15 Minuten"}},
+              {"@type":"Offer","itemOffered":{"@type":"Service","name":"Nachschlüssel","description":"Schlüssel für Wohnung, Keller, Briefkasten und Fahrradschloss, in etwa 5 Minuten"}},
+              {"@type":"Offer","itemOffered":{"@type":"Service","name":"Zuschnitt","description":"Leisten, Kabel, Kette und Schlauch auf Maß, direkt im Laden"}},
+              {"@type":"Offer","itemOffered":{"@type":"Service","name":"Lieferung im Viertel","description":"Sperrige Ware innerhalb von Stuttgart-West, am selben Tag"}},
+              {"@type":"Offer","itemOffered":{"@type":"Service","name":"Bestellservice","description":"Nicht vorrätige Artikel werden bestellt, meist über Nacht verfügbar"}},
+              {"@type":"Offer","itemOffered":{"@type":"Service","name":"Reservierung","description":"Ware wird auf Zuruf bis Ladenschluss an der Kasse zurückgelegt"}},
+              {"@type":"Offer","itemOffered":{"@type":"Service","name":"Rechnungskonto für Betriebe","description":"Kauf auf Kundennummer, Sammelrechnung zum Monatsende, Lieferschein pro Objekt"}}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.farben-nagel.de/#website",
+      "url": "https://www.farben-nagel.de/",
+      "name": "Farben Nagel",
+      "inLanguage": "de-DE",
+      "publisher": {"@id": "https://www.farben-nagel.de/#betrieb"}
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.farben-nagel.de/#startseite",
+      "url": "https://www.farben-nagel.de/",
+      "name": "Farben Nagel — Heimwerkermarkt Stuttgart-West, Mo–Sa bis 20 Uhr",
+      "isPartOf": {"@id": "https://www.farben-nagel.de/#website"},
+      "about": {"@id": "https://www.farben-nagel.de/#betrieb"},
+      "primaryImageOfPage": "https://www.farben-nagel.de/assets/og-bild.jpg",
+      "inLanguage": "de-DE"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.farben-nagel.de/#breadcrumb",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Startseite","item":"https://www.farben-nagel.de/"},
+        {"@type":"ListItem","position":2,"name":"Häufige Fragen","item":"https://www.farben-nagel.de/#fragen"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.farben-nagel.de/#fragen",
+      "inLanguage": "de-DE",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wo bekomme ich in Stuttgart-West einzelne Schrauben, Muttern oder Dübel?",
+          "acceptedAnswer": {"@type":"Answer","text":"Bei Farben Nagel in der Gutenbergstraße 65 in Stuttgart-West geben wir Schrauben, Muttern, Dübel, Sicherungen und Dichtungen einzeln ab — Sie müssen keine 100er-Packung kaufen. Bringen Sie das alte Teil oder ein Foto mit, dann finden wir das passende Gegenstück. Geöffnet ist Montag bis Samstag von 8 bis 20 Uhr."}
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich Farbe in einem Wunschton mischen lassen?",
+          "acceptedAnswer": {"@type":"Answer","text":"Ja. Farben Nagel mischt Wandfarbe, Lack und Lasur nach Wunschton, während Sie warten — in der Regel dauert das etwa fünfzehn Minuten. Bringen Sie ein Muster mit, etwa ein Stück Tapete, eine Leiste oder einen Farbfächer, dann treffen wir den Ton. Sie finden uns in der Gutenbergstraße 65 in Stuttgart-West."}
+        },
+        {
+          "@type": "Question",
+          "name": "Wo kann ich in Stuttgart-West einen Schlüssel nachmachen lassen?",
+          "acceptedAnswer": {"@type":"Answer","text":"Farben Nagel fertigt Nachschlüssel direkt im Laden an, meist in etwa fünf Minuten. Das gilt für Wohnungs-, Keller- und Briefkastenschlüssel sowie für Fahrradschlösser. Bringen Sie den Originalschlüssel mit. Sie finden uns in der Gutenbergstraße 65 in Stuttgart-West, montags bis samstags von 8 bis 20 Uhr."}
+        },
+        {
+          "@type": "Question",
+          "name": "Welcher Heimwerkermarkt in Stuttgart hat samstags bis 20 Uhr offen?",
+          "acceptedAnswer": {"@type":"Answer","text":"Der Heimwerkermarkt Farben Nagel in Stuttgart-West hat montags bis samstags von 8 bis 20 Uhr geöffnet, auch samstags bis zum Abend — das sind 72 Öffnungsstunden pro Woche. Sonntags ist geschlossen, an Feiertagen gelten abweichende Zeiten. Sie finden uns in der Gutenbergstraße 65, wenige Gehminuten von der Haltestelle Schwabstraße."}
+        },
+        {
+          "@type": "Question",
+          "name": "Wie komme ich zu Farben Nagel?",
+          "acceptedAnswer": {"@type":"Answer","text":"Farben Nagel liegt in der Gutenbergstraße 65 in Stuttgart-West. Mit der S-Bahn nehmen Sie die Linien S1 bis S5 zur Haltestelle Schwabstraße und gehen Richtung Stadtmitte. Die Buslinien 42 und 44 halten ebenfalls in der Nähe. Mit dem Auto fahren Sie die Rotebühlstraße bis zur Kreuzung Schwabstraße, dort rechts und an der nächsten Kreuzung noch einmal rechts."}
+        },
+        {
+          "@type": "Question",
+          "name": "Liefern Sie im Stuttgarter Westen?",
+          "acceptedAnswer": {"@type":"Answer","text":"Ja. Sperrige Ware liefert Farben Nagel innerhalb des Viertels am selben Tag aus. Für Handwerksbetriebe und Hausverwaltungen liefern wir auch an Baustellen und Objekte im Westen, im Süden und in der Innenstadt. Sprechen Sie uns im Laden an oder rufen Sie unter 0711 615 01 20 an."}
+        },
+        {
+          "@type": "Question",
+          "name": "Gibt es ein Rechnungskonto für Handwerksbetriebe und Hausverwaltungen?",
+          "acceptedAnswer": {"@type":"Answer","text":"Ja. Farben Nagel führt Rechnungskonten für Betriebe: Sie kaufen auf Kundennummer, erhalten eine Sammelrechnung zum Monatsende und pro Objekt einen Lieferschein. Material können Sie telefonisch durchgeben und kommissioniert abholen. Sie haben eine feste Ansprechperson statt eines Callcenters — gedacht für Handwerk, Hausverwaltung und Gastronomie."}
+        },
+        {
+          "@type": "Question",
+          "name": "Was kostet die Beratung?",
+          "acceptedAnswer": {"@type":"Answer","text":"Nichts. Die Beratung gehört bei Farben Nagel zum Einkauf. Beschreiben Sie das Problem, nicht das Produkt — wir übersetzen das in den passenden Artikel. Was nicht im Regal steht, bestellen wir; meist ist es am nächsten Vormittag da. Auf Wunsch legen wir die Ware bis Ladenschluss unter Ihrem Namen an die Kasse."}
+        }
+      ]
+    }
+  ]
+}
 </script>
 </body>
 </html>

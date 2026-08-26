@@ -1,0 +1,7 @@
+# Farben Nagel — Netlify-Weiterleitungen
+# Wirkt nur auf Netlify. Auf Apache greift stattdessen .htaccess,
+# auf GitHub Pages die Datei home.html mit Meta-Refresh.
+
+/home.html    /    301!
+/home         /    301!
+/index.htm    /    301!
