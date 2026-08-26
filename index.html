@@ -140,13 +140,12 @@ h1{font-size:clamp(29px,5.4vw,50px);color:var(--rot);font-weight:700}
 .route h3{font-size:18px}
 .route p{font-size:15.5px;color:#5C4B3C;flex:1}
 .route .btn{width:100%;margin-top:4px;padding:14px 16px;font-size:16px}
-.mailform{margin-top:16px;padding-top:18px;border-top:1.5px solid rgba(42,28,20,.18)}
-.frow{display:grid;gap:12px;grid-template-columns:1fr}
-@media(min-width:620px){.frow{grid-template-columns:1fr 1fr}}
-.frow label{display:flex;flex-direction:column;gap:5px;font-size:15.5px;font-weight:600;color:#4A382C}
-.frow input{font-family:inherit;font-size:17px;padding:12px;border:1.5px solid rgba(42,28,20,.32);background:var(--grund);font-weight:400}
-.frow input:focus{outline:2px solid var(--rot);outline-offset:1px}
 .btn-mail{background:var(--rot);color:#fff;border-color:var(--rot)}
+/* Der E-Mail-Knopf war früher ein <button> und erbte dessen
+   line-height:normal aus dem Browser-Standard. Als <a> würde er 1.55 vom
+   Body erben und dadurch höher ausfallen — was die ganze Kartenreihe
+   verschöbe. Diese Zeile stellt die frühere Darstellung exakt wieder her. */
+#mailLink{line-height:normal}
 .btn-mail:hover{background:var(--rot-dunkel);border-color:var(--rot-dunkel)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:16px 24px;font-size:16.5px;font-weight:600;text-decoration:none;border:2px solid transparent;cursor:pointer;font-family:inherit;transition:transform .12s ease,background .15s}
 .btn:hover{transform:translateY(-2px)}
@@ -154,14 +153,6 @@ h1{font-size:clamp(29px,5.4vw,50px);color:var(--rot);font-weight:700}
 .btn-wa:hover{background:var(--gruen-dunkel)}
 .btn-tel{background:#fff;color:var(--rot);border-color:var(--rot)}
 .btn-tel:hover{background:var(--zart)}
-.upload{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:16px}
-.btn-file{background:var(--zart);color:var(--rot-dunkel);border-color:var(--rot-dunkel);position:relative;overflow:hidden}
-.btn-file:hover{background:#E6E88C}
-.btn-file input{position:absolute;inset:0;opacity:0;cursor:pointer;font-size:100px}
-.filelist{font-size:15px;color:#6B5B4C}
-.filelist.has{color:var(--rot-dunkel);font-weight:600}
-.thumbs{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-.thumbs img{width:66px;height:66px;object-fit:cover;border:2px solid var(--rot);border-radius:3px}
 .hint{font-size:15px;color:#6B5B4C;margin-top:12px}
 .facts{display:flex;gap:10px 22px;flex-wrap:wrap;align-items:center;margin-top:clamp(22px,3vw,32px);padding-top:clamp(18px,2.5vw,26px);border-top:1.5px solid rgba(168,30,36,.18);font-size:16px;color:#6B5B4C}
 .facts span{display:inline-flex;align-items:center;gap:7px}
@@ -244,7 +235,6 @@ footer a:hover{color:#fff}
   <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.11 4.18 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
   <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></symbol>
   <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-4.35 7.35 8.5 8.5 0 0 1-8.35.5L3 21l1.75-4.4a8.38 8.38 0 0 1-1.25-4.6 8.5 8.5 0 0 1 8.5-8.5h.5a8.48 8.48 0 0 1 8 8v.5z"/></symbol>
-  <symbol id="i-clip" viewBox="0 0 24 24"><path d="M21.44 11.05 12.25 20.24a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></symbol>
   <symbol id="i-car-off" viewBox="0 0 24 24"><path d="M5 17h14M5 17a2 2 0 1 0 4 0M15 17a2 2 0 1 0 4 0M5 17v-5.5l1.7-4.5h10.6l1.7 4.5V17"/><line x1="3" y1="3" x2="21" y2="21"/></symbol>
   <symbol id="i-roller" viewBox="0 0 24 24"><rect x="3" y="3" width="14" height="6" rx="1"/><line x1="7" y1="9" x2="7" y2="14"/><rect x="4" y="14" width="6" height="7" rx="1"/></symbol>
   <symbol id="i-nut" viewBox="0 0 24 24"><polygon points="12 2 20 7 20 17 12 22 4 17 4 7"/><circle cx="12" cy="12" r="3"/></symbol>
@@ -308,7 +298,7 @@ footer a:hover{color:#fff}
             <span class="icon-badge" aria-hidden="true"><svg class="icon"><use href="#i-mail"/></svg></span>
             <h3>E-Mail mit Anhang</h3>
             <p>Für Foto, Zeichnung oder Materialliste als PDF.</p>
-            <button class="btn btn-mail" type="button" id="mailToggle" aria-expanded="false" aria-controls="mailform"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-mail"/></svg><span id="mailToggleText">Anhang wählen</span></button>
+            <a class="btn btn-mail" id="mailLink" href="mailto:info@farben-nagel.de"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-mail"/></svg>E-Mail senden</a>
           </div>
           <div class="route route-tel">
             <span class="icon-badge" aria-hidden="true"><svg class="icon"><use href="#i-phone"/></svg></span>
@@ -317,23 +307,6 @@ footer a:hover{color:#fff}
             <a class="btn btn-tel" href="tel:+497116150120"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-phone"/></svg>0711 615 01 20</a>
           </div>
         </div>
-
-        <form class="mailform" id="mailform" action="https://formspree.io/f/FORMULAR-ID" method="post" enctype="multipart/form-data" hidden>
-          <div class="frow">
-            <label>Name<input type="text" name="name" autocomplete="name" required></label>
-            <label>E-Mail für die Antwort<input type="email" name="email" autocomplete="email" required></label>
-          </div>
-          <input type="hidden" name="anfrage" id="mailtext">
-          <div class="upload">
-            <label class="btn btn-file" for="file"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-clip"/></svg>Foto oder Datei anhängen
-              <input type="file" id="file" name="anhang" accept="image/*,application/pdf" multiple>
-            </label>
-            <span class="filelist" id="filelist">Kein Anhang gewählt</span>
-          </div>
-          <div class="thumbs" id="thumbs"></div>
-          <button class="btn btn-mail" type="submit" style="margin-top:16px"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-mail"/></svg>Anfrage abschicken</button>
-          <p class="hint">Ihre Angaben gehen ausschließlich an Farben Nagel und werden nur zur Beantwortung dieser Anfrage verwendet.</p>
-        </form>
 
         <p class="hint">Keine Vorkasse, keine Anmeldung. Reservierung bis Ladenschluss.</p>
       </div>
@@ -545,6 +518,7 @@ footer a:hover{color:#fff}
 
 <script>
 var NR="497116150120";
+var MAIL="info@farben-nagel.de";
 var SORTIMENT=[
  ["Farben & Lacke","Wandfarbe, Lack, Lasur, Grundierung — im Wunschton gemischt","i-roller"],
  ["Eisenwaren","Schrauben, Muttern, Dübel, Winkel, Ketten — ab einem Stück","i-nut"],
@@ -567,21 +541,23 @@ var waSticky=document.getElementById("waSticky");
 var waB2B=document.getElementById("waB2B");
 
 function link(text){return "https://wa.me/"+NR+"?text="+encodeURIComponent(text);}
-var mailtext=document.getElementById("mailtext");
+
+// E-Mail: oeffnet das Mailprogramm mit vorbefuelltem Text. Kein externer
+// Dienst, keine Datenuebermittlung an Dritte. Anhaenge fuegen Besucherinnen
+// und Besucher im eigenen Mailprogramm an.
+var mailLink=document.getElementById("mailLink");
+function mailto(text){
+ return "mailto:"+MAIL
+   +"?subject="+encodeURIComponent("Anfrage über die Website")
+   +"&body="+encodeURIComponent(text+"\n\n\n— Bitte hängen Sie Fotos oder Dateien direkt in Ihrem E-Mail-Programm an.");
+}
 function sync(){
  var t=ta.value.trim();
- wa.href=link(t||"Guten Tag, ich suche ");
- waSticky.href=link(t||"Guten Tag, ich suche ");
- mailtext.value=t;
+ var vorlage=t||"Guten Tag, ich suche ";
+ wa.href=link(vorlage);
+ waSticky.href=link(vorlage);
+ mailLink.href=mailto(vorlage);
 }
-var mf=document.getElementById("mailform"), mt=document.getElementById("mailToggle"), mtText=document.getElementById("mailToggleText");
-mt.addEventListener("click",function(){
- var offen=mf.hidden;
- mf.hidden=!offen;
- mt.setAttribute("aria-expanded",offen?"true":"false");
- mtText.textContent=offen?"Anhang ausblenden":"Anhang wählen";
- if(offen) mf.scrollIntoView({block:"nearest",behavior:"smooth"});
-});
 ta.addEventListener("input",sync);
 waB2B.href=link("Guten Tag, wir sind ein Betrieb im Westen und möchten ein Rechnungskonto anlegen.");
 
@@ -592,17 +568,6 @@ tiles.addEventListener("click",function(e){
  ta.focus();
  ta.setSelectionRange(v.length,v.length);
  ta.scrollIntoView({block:"center",behavior:"smooth"});
-});
-
-var fi=document.getElementById("file"), fl=document.getElementById("filelist"), th=document.getElementById("thumbs");
-fi.addEventListener("change",function(){
- var n=fi.files.length;
- fl.textContent=n?(n===1?fi.files[0].name:n+" Dateien gewählt"):"Kein Anhang gewählt";
- fl.className="filelist"+(n?" has":"");
- th.innerHTML="";
- Array.prototype.forEach.call(fi.files,function(f){
-  if(!f.type.indexOf("image")){var i=document.createElement("img");i.src=URL.createObjectURL(f);i.alt=f.name;th.appendChild(i);}
- });
 });
 
 (function(){

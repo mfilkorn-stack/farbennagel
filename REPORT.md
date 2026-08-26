@@ -143,6 +143,44 @@ Zwei fachliche Hinweise dazu:
   aufgenommen. Diese Plattform wurde zum 20. Juli 2025 eingestellt. Der früher
   übliche Link geht heute ins Leere und gehört nicht mehr ins Impressum.
 
+### F — Kontaktformular auf `mailto:` umgestellt
+
+Nachgereichte Entscheidung, umgesetzt. Das defekte Formspree-Formular ist
+ersatzlos entfernt.
+
+**Was jetzt passiert:** Der Knopf „E-Mail senden" in der Anfragebox ist ein
+`mailto:`-Link. Er öffnet das E-Mail-Programm der Besucherin mit
+`info@farben-nagel.de` als Empfänger, „Anfrage über die Website" als Betreff und
+dem eingetippten Text — oder dem Kachel-Text, wenn jemand einen Sortimentsbereich
+angetippt hat — bereits im Nachrichtenfeld. Darunter steht ein Hinweis, Fotos und
+Dateien im eigenen Mailprogramm anzuhängen.
+
+**Was das bringt:** Kein US-Dienstleister, keine Auftragsverarbeitung, keine
+Registrierung, keine laufenden Kosten, kein Formular, das kaputtgehen kann. Der
+Text verlässt den Browser erst, wenn die Besucherin selbst auf Senden drückt.
+
+**Was entfällt:** Die Felder Name und E-Mail (überflüssig — beides steht in der
+Mail) sowie die Dateiauswahl mit Vorschaubildern. Anhänge fügt man jetzt im
+eigenen Mailprogramm an, wie im Knopf-Hinweis beschrieben.
+
+Mit entfernt wurden das nicht mehr genutzte CSS (`.mailform`, `.frow`, `.upload`,
+`.btn-file`, `.filelist`, `.thumbs`), das zugehörige JavaScript und das
+Büroklammer-Symbol aus dem Icon-Satz. Die Datenschutzerklärung hat statt des
+Formspree-Abschnitts jetzt einen Absatz „Anfragefeld auf der Startseite", der
+festhält, dass der eingetippte Text den Browser nicht verlässt.
+
+**Ein Fund am Rande, der Aufmerksamkeit verdient hat:** Der Knopf war vorher ein
+`<button>`, jetzt ist er ein `<a href="mailto:…">` — semantisch richtig, weil er
+navigiert. Browser geben `<button>` aber per Voreinstellung `line-height: normal`,
+während ein `<a>` die 1,55 vom Body erbt. Dadurch wurde der Knopf 11,6 px höher,
+was die gesamte Kartenreihe und alles darunter nach unten schob. Eine gezielte
+Regel `#mailLink{line-height:normal}` stellt die frühere Darstellung exakt wieder
+her. Nachgemessen: Höhen und Positionen stimmen wieder auf 0,0 px.
+
+Nebenbei aufgefallen: Der E-Mail-Knopf ist dadurch schon immer 11,6 px flacher
+als seine beiden Nachbarn. Das ist so gewollt konserviert, aber falls es Sie
+stört, lässt es sich mit einer Zeile angleichen.
+
 ---
 
 ## 3. Prüfergebnisse
@@ -173,6 +211,23 @@ per `getBoundingClientRect()` bei **1140 px, 860 px und 390 px**:
  390px   geprüft 40, identisch 40, abweichend 0
 ```
 
+Nach der Umstellung auf `mailto:` erneut geprüft, diesmal zusätzlich bei 620 px
+und inklusive Gesamtseitenhöhe:
+
+```
+1140px   2 Abweichungen (siehe unten)
+ 860px   identisch
+ 620px   identisch
+ 390px   identisch
+```
+
+Die zwei Abweichungen bei 1140 px betreffen ausschließlich die **Breite** zweier
+Karten in der Anfragebox: Karte 2 ist 1,2 px schmaler, Karte 3 um dieselben 1,2 px
+breiter. Ursache ist das Rastermaß `1fr`, das die Spaltenbreite an der Mindestbreite
+des längsten Wortes ausrichtet — „senden" ist 1,2 px schmaler als „Anhang". Alle
+Höhen, alle Y-Positionen und die Gesamtseitenhöhe sind unverändert. Sichtbar ist
+das nicht; ich führe es auf, weil „identisch" sonst nicht stimmen würde.
+
 **Pixelvergleich** des gesamten Bereichs oberhalb der neuen Abschnitte
 (y = 0…4053, Desktop):
 
@@ -197,12 +252,15 @@ Drei Läufe, Chromium headless, Mobil-Emulation:
 
 | Kategorie | Läufe | Minimum |
 |---|---|---|
-| Performance | 97, 97, 97 | **97** |
+| Performance | 98, 97, 97 | **97** |
 | Accessibility | 95, 95, 95 | **95** |
 | Best Practices | 100, 100, 100 | **100** |
 | SEO | 100, 100, 100 | **100** |
 
-Kennzahlen: FCP 1,7 s · LCP 2,4 s · CLS 0,006 · TBT 0 ms · Speed Index 1,7 s.
+Kennzahlen: FCP 1,7 s · LCP 2,3–2,4 s · CLS 0,006 · TBT 0 ms · Speed Index 1,7 s.
+
+Nach der Umstellung auf `mailto:` erneut über drei Läufe bestätigt: 98/97/97,
+95/95/95, 100/100/100, 100/100/100.
 
 **Zur Messumgebung, wichtig:** Diese Werte stammen von einem Testserver **mit
 gzip-Kompression**, so wie GitHub Pages, Netlify und jeder normale Apache
@@ -274,7 +332,7 @@ Die `.htaccess` enthält außerdem HTTPS-Erzwingung, `www`-Vereinheitlichung,
 | 4 | **`sameAs`** | nicht geliefert | Verknüpft Website, Google-Profil und Verzeichnisse zu einer Entität. Deutlicher Hebel. |
 | 5 | **Parken** | nicht geliefert | Häufige Suchfrage. FAQ-Antwort behandelt derzeit nur die Anfahrt. |
 | 6 | **Nachbarquartiere** | Frage 6 unbeantwortet | Bessere geografische Verankerung für Modelle. |
-| 7 | **Kontaktformular** | Frage 10 unbeantwortet | **Das Formular funktioniert nicht.** Es zeigt weiterhin auf `formspree.io/f/FORMULAR-ID`. Wer es ausfüllt, erreicht Sie nicht. Bitte entscheiden: echte Formspree-ID, Umstellung auf `mailto:` oder Entfernen. Der passende Absatz in der Datenschutzerklärung ist entsprechend markiert. |
+| 7 | ~~Kontaktformular~~ | **erledigt** | Auf `mailto:` umgestellt, siehe Abschnitt 2 F. |
 | 8 | **Verbraucherstreitbeilegung** | Bestätigung nötig | Rechtsverbindliche Aussage, siehe Abschnitt 2 E. |
 | 9 | **Hostinganbieter in der Datenschutzerklärung** | Domain zieht noch um | Ohne diese Angabe ist die Erklärung unvollständig. |
 | 10 | **Kontrast der WhatsApp-Schaltflächen** | Markenfarbe, Änderung war ausgeschlossen | Weiß auf `--gruen` `#1F8A3E` ergibt **4,41 : 1**, WCAG AA verlangt 4,5 : 1. **Das ist vorbestehend, nicht durch diese Arbeit entstanden** (3 Fälle vorher wie nachher). Ein Wechsel auf `#1B7D37` ergäbe 5,20 : 1 und wäre optisch kaum zu unterscheiden. Ihre Entscheidung — ich habe die Farbwerte wie vereinbart nicht angefasst. |
@@ -395,7 +453,7 @@ als zehn beliebige Branchenverzeichnisse.
   durch die Geometriemessung an 40 Elementen bei drei Breiten.
 - Keine erfundenen Koordinaten, Preisspannen, Zahlungsarten, Parkangaben oder
   Profile.
-- Kein Umbau des Kontaktformulars ohne Ihre Entscheidung.
+- Das Kontaktformular habe ich erst nach Ihrer Entscheidung umgebaut, nicht vorher.
 - Keine Änderung an Reim und Slogan.
 - Keine Tracker, keine Analytik, kein Cookie-Banner — es gibt nichts zu
   banneren, und das ist ein Vorzug, kein Mangel.
