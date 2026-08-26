@@ -32,6 +32,12 @@ h3{font-size:20px;font-family:"Fira Sans",sans-serif;font-weight:600;line-height
 p{margin:0}
 a{color:inherit}
 
+/* ---- Icons ---- */
+.icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.icon-sm{width:16px;height:16px}
+.icon-badge{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:var(--zart);color:var(--rot-dunkel);flex-shrink:0}
+.dark .icon-badge{background:rgba(255,255,255,.14);color:var(--sand)}
+
 /* ---- Kopf: Logo und Regalfoto als eine Komposition ---- */
 .masthead{background:var(--sand);border-bottom:3px solid var(--rot);overflow:hidden}
 .masthead-in{max-width:1140px;margin:0 auto;padding-left:clamp(12px,4vw,56px);display:grid;
@@ -53,6 +59,7 @@ a{color:inherit}
 /* ---- Infoleiste ---- */
 .info{background:var(--rot);color:#fff}
 .info .wrap{display:flex;gap:8px 20px;flex-wrap:wrap;align-items:center;padding-top:10px;padding-bottom:10px;font-size:15px}
+.info span{display:inline-flex;align-items:center;gap:6px}
 .info b{font-weight:600}
 .dot{width:8px;height:8px;border-radius:50%;background:#8CE0A0;display:inline-block;margin-right:7px}
 .dot.zu{background:#F0C0C0}
@@ -68,7 +75,7 @@ h1{font-size:clamp(29px,5.4vw,50px);color:var(--rot);font-weight:700}
 @media(min-width:960px){.hero-panels{grid-template-columns:1.08fr .92fr;align-items:stretch}}
 
 /* ---- Anfragebox ---- */
-.ask{background:#fff;border:2px solid var(--rot);padding:clamp(18px,2.6vw,26px);display:flex;flex-direction:column}
+.ask{background:#fff;border:2px solid var(--rot);padding:clamp(18px,2.6vw,26px);display:flex;flex-direction:column;box-shadow:0 4px 18px rgba(42,28,20,.08)}
 .ask h2{font-size:clamp(22px,2.8vw,28px)}
 .ask p.sub{margin-top:8px;color:#4A382C;font-size:16.5px}
 .ask textarea{width:100%;min-height:104px;font-family:inherit;font-size:17px;padding:13px;margin-top:14px;border:1.5px solid rgba(42,28,20,.32);background:var(--grund);resize:vertical}
@@ -76,7 +83,11 @@ h1{font-size:clamp(29px,5.4vw,50px);color:var(--rot);font-weight:700}
 .ask>p.hint{margin-top:auto;padding-top:20px}
 .routes{display:grid;gap:12px;grid-template-columns:1fr;margin-top:18px}
 @media(min-width:620px){.routes{grid-template-columns:repeat(3,1fr)}}
-.route{background:var(--grund);border:1.5px solid rgba(42,28,20,.18);padding:16px 16px 18px;display:flex;flex-direction:column;gap:8px}
+.route{background:var(--grund);border:1.5px solid rgba(42,28,20,.18);padding:16px 16px 18px;display:flex;flex-direction:column;gap:8px;box-shadow:0 1px 2px rgba(42,28,20,.05);transition:transform .12s ease,box-shadow .12s ease}
+.route:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(42,28,20,.12)}
+.route .icon-badge{margin-bottom:2px}
+.route-wa .icon-badge{background:rgba(31,138,62,.12);color:var(--gruen-dunkel)}
+.route-mail .icon-badge,.route-tel .icon-badge{background:rgba(168,30,36,.1);color:var(--rot)}
 .route h3{font-size:18px}
 .route p{font-size:15.5px;color:#5C4B3C;flex:1}
 .route .btn{width:100%;margin-top:4px;padding:14px 16px;font-size:16px}
@@ -104,16 +115,19 @@ h1{font-size:clamp(29px,5.4vw,50px);color:var(--rot);font-weight:700}
 .thumbs img{width:66px;height:66px;object-fit:cover;border:2px solid var(--rot);border-radius:3px}
 .hint{font-size:15px;color:#6B5B4C;margin-top:12px}
 .facts{display:flex;gap:10px 22px;flex-wrap:wrap;align-items:center;margin-top:clamp(22px,3vw,32px);padding-top:clamp(18px,2.5vw,26px);border-top:1.5px solid rgba(168,30,36,.18);font-size:16px;color:#6B5B4C}
+.facts span{display:inline-flex;align-items:center;gap:7px}
+.facts .icon{color:var(--rot)}
 .facts b{color:var(--rot-dunkel);font-weight:600}
 
 /* ---- Sortimentsliste ---- */
-.cabinet{background:var(--rot-dunkel);padding:16px;display:flex;flex-direction:column}
+.cabinet{background:var(--rot-dunkel);padding:16px;display:flex;flex-direction:column;box-shadow:0 4px 18px rgba(110,18,22,.18)}
 .cabinet-top{color:var(--sand);font-size:15px;padding:2px 4px 13px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;align-content:start;flex:1}
 @media(min-width:560px){.tiles{grid-template-columns:repeat(3,1fr)}}
 .tile{background:linear-gradient(#EBD6AE,#D6BA85);border:none;text-align:left;cursor:pointer;color:#3E2B0C;font-family:inherit;padding:11px 12px 12px;display:block;width:100%;box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 2px 0 rgba(0,0,0,.3);transition:transform .12s ease,background .15s}
 .tile:hover,.tile:focus-visible{transform:translateY(-3px);background:linear-gradient(#F6E7C6,#E3CB9B)}
 .tile:focus-visible{outline:3px solid var(--zart);outline-offset:2px}
+.tile .icon{display:block;width:22px;height:22px;color:var(--rot-dunkel);margin-bottom:6px}
 .tile b{display:block;font-size:16.5px;font-weight:700;line-height:1.2}
 .tile span{display:block;font-size:14px;color:#5C441A;margin-top:4px;line-height:1.32}
 .cabinet-note{color:var(--sand);font-size:15px;padding:14px 4px 2px;margin-top:auto}
@@ -143,6 +157,7 @@ section{padding:clamp(40px,5.5vw,78px) 0}
 .stat{font-family:"Fira Sans Condensed",sans-serif;font-size:42px;font-weight:700;line-height:1;color:var(--rot)}
 .dark .stat{color:var(--sand)}
 .cell h3{margin:12px 0 7px}
+.cell .icon-badge+h3{margin-top:10px}
 .cell p{font-size:16.5px;color:#4A382C}
 .dark .cell p{color:#EDD9BC}
 .meta{font-size:15px;color:var(--sand-text);margin-top:12px;display:block;font-weight:500}
@@ -153,14 +168,15 @@ section{padding:clamp(40px,5.5vw,78px) 0}
 footer{background:var(--rot-dunkel);color:#EDD9BC;padding:clamp(36px,5vw,64px) 0 34px}
 .f-grid{display:grid;gap:26px;grid-template-columns:1fr}
 @media(min-width:700px){.f-grid{grid-template-columns:repeat(3,1fr)}}
-footer h3{color:#fff;font-size:17px;margin-bottom:10px}
+footer h3{color:#fff;font-size:17px;margin-bottom:10px;display:flex;align-items:center;gap:9px}
+footer h3 .icon{color:var(--sand)}
 footer p,footer a{font-size:16.5px;color:#EDD9BC;text-decoration:none}
 footer a:hover{color:#fff}
 .f-slogan{font-family:"Lobster",cursive;font-size:clamp(21px,3.2vw,31px);color:var(--sand);margin-top:36px;line-height:1.25}
 
 /* ---- Feste Aktionsleiste, nur Handy ---- */
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:80;display:flex;background:#fff;border-top:2px solid var(--rot);box-shadow:0 -3px 12px rgba(42,28,20,.16)}
-.sticky a{flex:1;padding:15px 8px;text-align:center;font-weight:600;font-size:16.5px;text-decoration:none}
+.sticky a{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding:15px 8px;text-align:center;font-weight:600;font-size:16.5px;text-decoration:none}
 .sticky .wa{background:var(--gruen);color:#fff}
 .sticky .tel{color:var(--rot)}
 @media(min-width:860px){.sticky{display:none}}
@@ -169,6 +185,34 @@ footer a:hover{color:#fff}
 </style>
 </head>
 <body>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.11 4.18 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-4.35 7.35 8.5 8.5 0 0 1-8.35.5L3 21l1.75-4.4a8.38 8.38 0 0 1-1.25-4.6 8.5 8.5 0 0 1 8.5-8.5h.5a8.48 8.48 0 0 1 8 8v.5z"/></symbol>
+  <symbol id="i-clip" viewBox="0 0 24 24"><path d="M21.44 11.05 12.25 20.24a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></symbol>
+  <symbol id="i-car-off" viewBox="0 0 24 24"><path d="M5 17h14M5 17a2 2 0 1 0 4 0M15 17a2 2 0 1 0 4 0M5 17v-5.5l1.7-4.5h10.6l1.7 4.5V17"/><line x1="3" y1="3" x2="21" y2="21"/></symbol>
+  <symbol id="i-roller" viewBox="0 0 24 24"><rect x="3" y="3" width="14" height="6" rx="1"/><line x1="7" y1="9" x2="7" y2="14"/><rect x="4" y="14" width="6" height="7" rx="1"/></symbol>
+  <symbol id="i-nut" viewBox="0 0 24 24"><polygon points="12 2 20 7 20 17 12 22 4 17 4 7"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L2 19l3 3 7.3-7.3a4 4 0 0 0 5.4-5.4l-2.8 2.8-2-2z"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 2.69 17.66 8.35a8 8 0 1 1-11.31 0z"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.83.66.8-2.42C7 19.16 9.65 18.09 12 16.5 15.44 14.16 17 12.55 17 8z"/><path d="M17 8c-5.5 1.5-9.75 3.87-13 8.5"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 9.5 12 2l9 7.5V21a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="16.5" r="5.5"/><path d="M11.5 12.5 21 3M16.5 7.5 19 5m-3.5 6.5L18 9"/></symbol>
+  <symbol id="i-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></symbol>
+  <symbol id="i-package" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 15 2 2 4-4"/></symbol>
+  <symbol id="i-invoice" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></symbol>
+  <symbol id="i-inbox" viewBox="0 0 24 24"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h7a4 4 0 0 0 4-4 4 4 0 0 0-4-4H9a4 4 0 0 1-4-4 4 4 0 0 1 4-4h7"/></symbol>
+  <symbol id="i-walk" viewBox="0 0 24 24"><circle cx="13" cy="4" r="2"/><path d="M9.5 22l1.2-5.5-2.2-1.7.6-4.3 3 .7 1.9 3.1h2.5"/><path d="M8.5 12.5 6 14.5 4.5 20"/></symbol>
+</svg>
 
 <div class="masthead">
   <div class="masthead-in">
@@ -180,9 +224,9 @@ footer a:hover{color:#fff}
 <div class="info">
   <div class="wrap">
     <span><span class="dot" id="dot"></span><b id="openState">Jetzt geöffnet</b></span>
-    <span>Mo–Sa 8:00–20:00</span>
-    <span>Gutenbergstr. 65, Stuttgart-West</span>
-    <span><a href="tel:+497116150120">0711 615 01 20</a></span>
+    <span><svg class="icon icon-sm" aria-hidden="true"><use href="#i-clock"/></svg>Mo–Sa 8:00–20:00</span>
+    <span><svg class="icon icon-sm" aria-hidden="true"><use href="#i-pin"/></svg>Gutenbergstr. 65, Stuttgart-West</span>
+    <span><svg class="icon icon-sm" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+497116150120">0711 615 01 20</a></span>
   </div>
 </div>
 
@@ -198,20 +242,23 @@ footer a:hover{color:#fff}
         <textarea id="msg" aria-label="Ihre Anfrage" placeholder="Zum Beispiel: Siphon unter der Küchenspüle undicht, Gewinde 1 1/2 Zoll — haben Sie eine Dichtung?"></textarea>
 
         <div class="routes">
-          <div class="route">
+          <div class="route route-wa">
+            <span class="icon-badge" aria-hidden="true"><svg class="icon"><use href="#i-chat"/></svg></span>
             <h3>WhatsApp</h3>
             <p>Der schnellste Weg. Fotos hängen Sie direkt im Chat an.</p>
-            <a class="btn btn-wa" id="waLink" href="#" target="_blank" rel="noopener">Nachricht senden</a>
+            <a class="btn btn-wa" id="waLink" href="#" target="_blank" rel="noopener"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-chat"/></svg>Nachricht senden</a>
           </div>
-          <div class="route">
+          <div class="route route-mail">
+            <span class="icon-badge" aria-hidden="true"><svg class="icon"><use href="#i-mail"/></svg></span>
             <h3>E-Mail mit Anhang</h3>
             <p>Für Foto, Zeichnung oder Materialliste als PDF.</p>
-            <button class="btn btn-mail" type="button" id="mailToggle" aria-expanded="false" aria-controls="mailform">Anhang wählen</button>
+            <button class="btn btn-mail" type="button" id="mailToggle" aria-expanded="false" aria-controls="mailform"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-mail"/></svg><span id="mailToggleText">Anhang wählen</span></button>
           </div>
-          <div class="route">
+          <div class="route route-tel">
+            <span class="icon-badge" aria-hidden="true"><svg class="icon"><use href="#i-phone"/></svg></span>
             <h3>Anrufen</h3>
             <p>Wenn es eilt oder sich schlecht schreiben lässt.</p>
-            <a class="btn btn-tel" href="tel:+497116150120">0711 615 01 20</a>
+            <a class="btn btn-tel" href="tel:+497116150120"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-phone"/></svg>0711 615 01 20</a>
           </div>
         </div>
 
@@ -222,13 +269,13 @@ footer a:hover{color:#fff}
           </div>
           <input type="hidden" name="anfrage" id="mailtext">
           <div class="upload">
-            <label class="btn btn-file" for="file">Foto oder Datei anhängen
+            <label class="btn btn-file" for="file"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-clip"/></svg>Foto oder Datei anhängen
               <input type="file" id="file" name="anhang" accept="image/*,application/pdf" multiple>
             </label>
             <span class="filelist" id="filelist">Kein Anhang gewählt</span>
           </div>
           <div class="thumbs" id="thumbs"></div>
-          <button class="btn btn-mail" type="submit" style="margin-top:16px">Anfrage abschicken</button>
+          <button class="btn btn-mail" type="submit" style="margin-top:16px"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-mail"/></svg>Anfrage abschicken</button>
           <p class="hint">Ihre Angaben gehen ausschließlich an Farben Nagel und werden nur zur Beantwortung dieser Anfrage verwendet.</p>
         </form>
 
@@ -242,7 +289,7 @@ footer a:hover{color:#fff}
       </div>
     </div>
 
-    <p class="facts"><span>Zu Fuß aus dem halben Westen</span><span>Kein Auto nötig</span><span><b>Sechs Tage bis 20 Uhr offen</b></span></p>
+    <p class="facts"><span><svg class="icon icon-sm" aria-hidden="true"><use href="#i-walk"/></svg>Zu Fuß aus dem halben Westen</span><span><svg class="icon icon-sm" aria-hidden="true"><use href="#i-car-off"/></svg>Kein Auto nötig</span><span><svg class="icon icon-sm" aria-hidden="true"><use href="#i-clock"/></svg><b>Sechs Tage bis 20 Uhr offen</b></span></p>
   </div>
 </header>
 
@@ -295,12 +342,12 @@ footer a:hover{color:#fff}
       <p>Die Dinge, für die man sonst zwei Termine und eine Woche braucht.</p>
     </div>
     <div class="cols cols-3">
-      <div class="cell"><h3>Farbe mischen</h3><p>Wandfarbe, Lack und Lasur nach Wunschton. Muster mitbringen, wir treffen ihn.</p><span class="meta">ca. 15 Minuten</span></div>
-      <div class="cell"><h3>Schlüssel</h3><p>Nachschlüssel für Wohnung, Keller, Briefkasten, Fahrradschloss.</p><span class="meta">ca. 5 Minuten</span></div>
-      <div class="cell"><h3>Zuschnitt</h3><p>Leisten, Kabel, Kette, Schlauch — auf Maß, direkt im Laden.</p><span class="meta">nach Bedarf</span></div>
-      <div class="cell"><h3>Lieferung im Westen</h3><p>Sperriges kommt zu Ihnen. Innerhalb des Viertels am selben Tag.</p><span class="meta">gleicher Tag</span></div>
-      <div class="cell"><h3>Bestellservice</h3><p>Was nicht im Regal steht, ordern wir. Meist am nächsten Vormittag da.</p><span class="meta">über Nacht</span></div>
-      <div class="cell"><h3>Reservieren</h3><p>Anrufen oder schreiben, wir legen es mit Ihrem Namen an die Kasse.</p><span class="meta">bis Ladenschluss</span></div>
+      <div class="cell"><span class="icon-badge" aria-hidden="true"><svg class="icon"><use href="#i-roller"/></svg></span><h3>Farbe mischen</h3><p>Wandfarbe, Lack und Lasur nach Wunschton. Muster mitbringen, wir treffen ihn.</p><span class="meta">ca. 15 Minuten</span></div>
+      <div class="cell"><span class="icon-badge" aria-hidden="true"><svg class="icon"><use href="#i-key"/></svg></span><h3>Schlüssel</h3><p>Nachschlüssel für Wohnung, Keller, Briefkasten, Fahrradschloss.</p><span class="meta">ca. 5 Minuten</span></div>
+      <div class="cell"><span class="icon-badge" aria-hidden="true"><svg class="icon"><use href="#i-scissors"/></svg></span><h3>Zuschnitt</h3><p>Leisten, Kabel, Kette, Schlauch — auf Maß, direkt im Laden.</p><span class="meta">nach Bedarf</span></div>
+      <div class="cell"><span class="icon-badge" aria-hidden="true"><svg class="icon"><use href="#i-truck"/></svg></span><h3>Lieferung im Westen</h3><p>Sperriges kommt zu Ihnen. Innerhalb des Viertels am selben Tag.</p><span class="meta">gleicher Tag</span></div>
+      <div class="cell"><span class="icon-badge" aria-hidden="true"><svg class="icon"><use href="#i-package"/></svg></span><h3>Bestellservice</h3><p>Was nicht im Regal steht, ordern wir. Meist am nächsten Vormittag da.</p><span class="meta">über Nacht</span></div>
+      <div class="cell"><span class="icon-badge" aria-hidden="true"><svg class="icon"><use href="#i-calendar"/></svg></span><h3>Reservieren</h3><p>Anrufen oder schreiben, wir legen es mit Ihrem Namen an die Kasse.</p><span class="meta">bis Ladenschluss</span></div>
     </div>
   </div>
 </section>
@@ -312,14 +359,14 @@ footer a:hover{color:#fff}
       <p>Ein Trupp, der auf ein Bauteil wartet, kostet mehr als jede Preisdifferenz. Wir sind fünf Minuten entfernt und führen ein Rechnungskonto.</p>
     </div>
     <div class="cols cols-2">
-      <div class="cell"><h3>Rechnungskonto</h3><p>Kauf auf Kundennummer, Sammelrechnung zum Monatsende, Lieferschein pro Objekt.</p></div>
-      <div class="cell"><h3>Abholfach</h3><p>Material telefonisch durchgeben, kommissioniert bereitstellen lassen, morgens mitnehmen.</p></div>
-      <div class="cell"><h3>Objektlieferung</h3><p>Anlieferung an Baustellen und Objekte im Westen, Süden und der Innenstadt.</p></div>
-      <div class="cell"><h3>Feste Ansprechperson</h3><p>Eine Nummer, ein Name, kein Callcenter. Auch für Standardlisten und Wiederkehrbedarf.</p></div>
+      <div class="cell"><span class="icon-badge" aria-hidden="true"><svg class="icon"><use href="#i-invoice"/></svg></span><h3>Rechnungskonto</h3><p>Kauf auf Kundennummer, Sammelrechnung zum Monatsende, Lieferschein pro Objekt.</p></div>
+      <div class="cell"><span class="icon-badge" aria-hidden="true"><svg class="icon"><use href="#i-inbox"/></svg></span><h3>Abholfach</h3><p>Material telefonisch durchgeben, kommissioniert bereitstellen lassen, morgens mitnehmen.</p></div>
+      <div class="cell"><span class="icon-badge" aria-hidden="true"><svg class="icon"><use href="#i-truck"/></svg></span><h3>Objektlieferung</h3><p>Anlieferung an Baustellen und Objekte im Westen, Süden und der Innenstadt.</p></div>
+      <div class="cell"><span class="icon-badge" aria-hidden="true"><svg class="icon"><use href="#i-user"/></svg></span><h3>Feste Ansprechperson</h3><p>Eine Nummer, ein Name, kein Callcenter. Auch für Standardlisten und Wiederkehrbedarf.</p></div>
     </div>
     <div class="sec-cta">
-      <a class="btn btn-wa" id="waB2B" href="#" target="_blank" rel="noopener">Rechnungskonto anfragen</a>
-      <a class="btn btn-tel" href="tel:+497116150120">0711 615 01 20</a>
+      <a class="btn btn-wa" id="waB2B" href="#" target="_blank" rel="noopener"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-invoice"/></svg>Rechnungskonto anfragen</a>
+      <a class="btn btn-tel" href="tel:+497116150120"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-phone"/></svg>0711 615 01 20</a>
     </div>
   </div>
 </section>
@@ -328,17 +375,17 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <div class="f-grid">
       <div>
-        <h3>Farben Nagel</h3>
+        <h3><svg class="icon icon-sm" aria-hidden="true"><use href="#i-pin"/></svg>Farben Nagel</h3>
         <p>Gutenbergstraße 65<br>70176 Stuttgart-West</p>
         <p style="margin-top:10px"><a href="tel:+497116150120">0711 615 01 20</a></p>
       </div>
       <div>
-        <h3>Öffnungszeiten</h3>
+        <h3><svg class="icon icon-sm" aria-hidden="true"><use href="#i-clock"/></svg>Öffnungszeiten</h3>
         <p>Montag – Samstag &nbsp;8:00 – 20:00<br>Sonntag &nbsp;geschlossen</p>
         <p style="margin-top:8px;opacity:.75">An Feiertagen abweichend.</p>
       </div>
       <div>
-        <h3>Der Weg zu uns</h3>
+        <h3><svg class="icon icon-sm" aria-hidden="true"><use href="#i-route"/></svg>Der Weg zu uns</h3>
         <p><b>Auto:</b> Rotebühlstraße bis Kreuzung Schwabstraße (REWE), rechts, an der nächsten Kreuzung noch mal rechts.<br>
         <b>S-Bahn:</b> S1–S5 bis Schwabstraße, Ausgang Richtung Stadtmitte.<br>
         <b>Bus:</b> Linie 42 und 44.</p>
@@ -349,26 +396,26 @@ footer a:hover{color:#fff}
 </footer>
 
 <nav class="sticky" aria-label="Schnellkontakt">
-  <a class="wa" id="waSticky" href="#" target="_blank" rel="noopener">Per WhatsApp fragen</a>
-  <a class="tel" href="tel:+497116150120">Anrufen</a>
+  <a class="wa" id="waSticky" href="#" target="_blank" rel="noopener"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-chat"/></svg>Per WhatsApp fragen</a>
+  <a class="tel" href="tel:+497116150120"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-phone"/></svg>Anrufen</a>
 </nav>
 
 <script>
 var NR="497116150120";
 var SORTIMENT=[
- ["Farben & Lacke","Wandfarbe, Lack, Lasur, Grundierung — im Wunschton gemischt"],
- ["Eisenwaren","Schrauben, Muttern, Dübel, Winkel, Ketten — ab einem Stück"],
- ["Werkzeug","Bohren, sägen, schrauben, messen, plus Material dazu"],
- ["Sanitär","Dichtungen, Siphons, Perlatoren, Spülkastenteile. Und ja: Pümpel"],
- ["Elektro","Sicherungen, Leuchtmittel, Klemmen, Kabel, Mehrfachstecker"],
- ["Boden & Tapete","Belag, Leisten, Kleber, Tapete, Kleister, Profile"],
- ["Garten & Balkon","Gartengeräte, Pflanzenzubehör, Erde, Töpfe, Schlauch, Streugut"],
- ["Haushalt","Glühbirne, Batterie, Filtertüte, Eimer, Besen, Wäschespinne"],
- ["Schlüssel","Nachschlüssel für Wohnung, Keller, Briefkasten, Fahrradschloss"]
+ ["Farben & Lacke","Wandfarbe, Lack, Lasur, Grundierung — im Wunschton gemischt","i-roller"],
+ ["Eisenwaren","Schrauben, Muttern, Dübel, Winkel, Ketten — ab einem Stück","i-nut"],
+ ["Werkzeug","Bohren, sägen, schrauben, messen, plus Material dazu","i-tool"],
+ ["Sanitär","Dichtungen, Siphons, Perlatoren, Spülkastenteile. Und ja: Pümpel","i-drop"],
+ ["Elektro","Sicherungen, Leuchtmittel, Klemmen, Kabel, Mehrfachstecker","i-zap"],
+ ["Boden & Tapete","Belag, Leisten, Kleber, Tapete, Kleister, Profile","i-layers"],
+ ["Garten & Balkon","Gartengeräte, Pflanzenzubehör, Erde, Töpfe, Schlauch, Streugut","i-leaf"],
+ ["Haushalt","Glühbirne, Batterie, Filtertüte, Eimer, Besen, Wäschespinne","i-home"],
+ ["Schlüssel","Nachschlüssel für Wohnung, Keller, Briefkasten, Fahrradschloss","i-key"]
 ];
 var tiles=document.getElementById("tiles");
 tiles.innerHTML=SORTIMENT.map(function(a){
- return '<button class="tile" data-bereich="'+a[0]+'"><b>'+a[0]+'</b><span>'+a[1]+'</span></button>';
+ return '<button class="tile" data-bereich="'+a[0]+'"><svg class="icon" aria-hidden="true"><use href="#'+a[2]+'"/></svg><b>'+a[0]+'</b><span>'+a[1]+'</span></button>';
 }).join("");
 
 var ta=document.getElementById("msg");
@@ -384,12 +431,12 @@ function sync(){
  waSticky.href=link(t||"Guten Tag, ich suche ");
  mailtext.value=t;
 }
-var mf=document.getElementById("mailform"), mt=document.getElementById("mailToggle");
+var mf=document.getElementById("mailform"), mt=document.getElementById("mailToggle"), mtText=document.getElementById("mailToggleText");
 mt.addEventListener("click",function(){
  var offen=mf.hidden;
  mf.hidden=!offen;
  mt.setAttribute("aria-expanded",offen?"true":"false");
- mt.textContent=offen?"Anhang ausblenden":"Anhang wählen";
+ mtText.textContent=offen?"Anhang ausblenden":"Anhang wählen";
  if(offen) mf.scrollIntoView({block:"nearest",behavior:"smooth"});
 });
 ta.addEventListener("input",sync);
